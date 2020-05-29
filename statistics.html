@@ -75,16 +75,35 @@
       </div>
    </header>
    <div class="container">
-      <div class="row">
-         <div class=" col" id="piechart"></div>
-         <div class=" col" id="dountchart"></div>
-      </div>
-      <div class="row">
-         <div class="col-md" id="guagechart"></div>
-         <div class="col-md" id="columnchart"></div>
-      </div>
-      <div class="row"></div>
-         <div  id="geochart"></div>
+      <ul class="nav nav-tabs">
+         <li class="nav-item">
+            <a class="nav-link active" href="#first" role="tab" data-toggle="tab">First</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#second" role="tab" data-toggle="tab">Second</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#third" role="tab" data-toggle="tab">Third</a>
+         </li>
+      </ul>
+      <div class="tab-content">
+         <div role="tabpanel" class="tab-pane fade show active" id="first">
+            <!--   <div class=" col-6" id="piechart"></div> -->
+            <div class="row">
+               <div class="col-12 col-md-6" id="dountchart1"></div>
+               <div class="col-12 col-md-6" id="dountchart2"></div>
+            </div>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="second">
+            <!--  <div class="col-md" id="guagechart"></div> -->
+            <div class="row">
+               <div class="col-12 col-md-6" id="dountchart3"></div>
+               <div class="col-12 col-md-6" id="columnchart1"></div>
+            </div>
+         </div>
+         <div role="tabpanel" class="tab-pane fade" id="third">
+            <div id="geochart"></div>
+         </div>
       </div>
    </div>
 

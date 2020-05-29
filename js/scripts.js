@@ -16,7 +16,7 @@
 
 
 
-/* piechart */
+/* piechart 
 google.charts.load('current', { 'packages': ['corechart'] });
 google.charts.setOnLoadCallback(drawChart1);
 function drawChart1() {
@@ -32,11 +32,11 @@ function drawChart1() {
 
     var options = {
         title: 'My Daily Activities',
-        is3D: true,/* just for 3d */
-        /* pieHole: 0.4, for dount shape */
-        /* sliceVisibilityThreshold: 5/8 
-        pieResidueSliceColor
-        pieResidueSliceLabel */
+        is3D: true,// just for 3d 
+        // pieHole: 0.4, for dount shape 
+        // sliceVisibilityThreshold: 5/8 
+       // pieResidueSliceColor
+       // pieResidueSliceLabel 
         pieSliceText: 'label',
         legend: 'none',
         slices: {
@@ -50,8 +50,8 @@ function drawChart1() {
 
     chart.draw(data, options);
 };
-/* end piechart*/
-/* gauge */
+ end piechart*/
+/* gauge 
 google.charts.load('current', { 'packages': ['gauge'] });
 google.charts.setOnLoadCallback(drawChart2);
 
@@ -89,9 +89,125 @@ function drawChart2() {
         chart.draw(data, options);
     }, 26000);
 };
-/* end gauge */
+   end gauge */
+
+/* dountchart */
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart1);
+function drawChart1() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['', 5],
+        ['Work', 11],
+    ]);
+
+    var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+        sliceVisibilityThreshold: 1/4 ,
+        pieResidueSliceColor:'transparent',
+        pieResidueSliceLabel:'none',
+        pieSliceText: 'percentage',
+        legend: 'none',
+        pieStartAngle:270,
+        tooltip:{
+            trigger: 'none',
+        },
+
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('dountchart1'));
+
+    chart.draw(data, options);
+};
+/* ....... */
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart2);
+function drawChart2() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['', 4],
+        ['Eat', 22],
+    ]);
+
+    var options = {
+        title: 'percentage',
+        pieHole: 0.4,
+        sliceVisibilityThreshold: 3/13 ,
+        pieResidueSliceColor:'transparent',
+        pieResidueSliceLabel:'none',
+        pieSliceText: 'percentage',
+        legend: 'none',
+        pieStartAngle:270,
+        tooltip:{
+            trigger: 'none',
+        },
+    };
+    var chart = new google.visualization.PieChart(document.getElementById('dountchart2'));
+    chart.draw(data, options);
+};
+/* ......... */
+google.charts.load('current', { 'packages': ['corechart'] });
+google.charts.setOnLoadCallback(drawChart3);
+function drawChart3() {
+
+    var data = google.visualization.arrayToDataTable([
+        ['Task', 'Hours per Day'],
+        ['Work', 11],
+        ['Eat', 2],
+        ['Commute', 2],
+        ['Watch TV', 2],
+        ['Sleep', 7]
+    ]);
+
+    var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+        /* sliceVisibilityThreshold: 5/8 
+        pieResidueSliceColor
+        pieResidueSliceLabel */
+        pieSliceText: 'percentage',
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('dountchart3'));
+
+    chart.draw(data, options);
+};
+/* end dountchart*/
+
+/*column chart*/
+google.charts.load('current', { 'packages': ['bar'] });
+google.charts.setOnLoadCallback(drawChart4);
+
+function drawChart4() {
+    var data = google.visualization.arrayToDataTable([
+        ['Year', 'Sales', 'Expenses', 'Profit'],
+        ['2014', 1000, 400, 200],
+        ['2015', 1170, 460, 250],
+        ['2016', 660, 1120, 300],
+        ['2017', 1030, 540, 350]
+    ]);
+
+    var options = {
+        chart: {
+            title: 'Company Performance',
+            subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+        }
+    };
+
+    var chart = new google.charts.Bar(document.getElementById('columnchart1'));
+
+
+    chart.draw(data, google.charts.Bar.convertOptions(options));
+};
+
+/*end column chart*/
+
 /* geochart */
-google.charts.load('current', {'packages': ['geochart'],
+google.charts.load('current', {
+    'packages': ['geochart'],
     // Note: you will need to get a mapsApiKey for your project.
     // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
     'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
@@ -115,60 +231,7 @@ function drawRegionsMap() {
 
     chart.draw(data, options);
 };
-  /* end geochart */
-  /*column chart*/
-  google.charts.load('current', {'packages':['bar']});
-  google.charts.setOnLoadCallback(drawChart3);
-
-  function drawChart3() {
-    var data = google.visualization.arrayToDataTable([
-      ['Year', 'Sales', 'Expenses', 'Profit'],
-      ['2014', 1000, 400, 200],
-      ['2015', 1170, 460, 250],
-      ['2016', 660, 1120, 300],
-      ['2017', 1030, 540, 350]
-    ]);
-
-    var options = {
-      chart: {
-        title: 'Company Performance',
-        subtitle: 'Sales, Expenses, and Profit: 2014-2017',
-      }
-    };
-
-    var chart = new google.charts.Bar(document.getElementById('columnchart'));
-
-    chart.draw(data, google.charts.Bar.convertOptions(options));
-  };
-  /*end column chart*/
-  /* dountchart */
-google.charts.load('current', { 'packages': ['corechart'] });
-google.charts.setOnLoadCallback(drawChart4);
-function drawChart4() {
-
-    var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Work', 11],
-        ['Eat', 2],
-        ['Commute', 2],
-        ['Watch TV', 2],
-        ['Sleep', 7]
-    ]);
-
-    var options = {
-        title: 'My Daily Activities',
-        pieHole: 0.4,
-        /* sliceVisibilityThreshold: 5/8 
-        pieResidueSliceColor
-        pieResidueSliceLabel */
-        pieSliceText: 'percentage',
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('dountchart'));
-
-    chart.draw(data, options);
-};
-/* end dountchart*/
+/* end geochart */
 /*  google.charts.load('current', {
         'packages':['geochart'],
         // Note: you will need to get a mapsApiKey for your project.

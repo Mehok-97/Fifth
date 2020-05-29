@@ -395,13 +395,19 @@ header.masthead .masthead-heading {
   .center-text{
 	text-align: center;
 }
-/* chart */
-#piechart ,#columnchart,#dountchart,#guagechart{
-  width:1em;
-  height: 250px;
-  display: inline-block;
+                 /* chart */
+#dountchart1,#dountchart2,#dountchart3{
+ height: 250px;
 }
-#geochart {
-  width: fit-content;
+.tab-content>.tab-pane {
+  height: 1px;
+  overflow: hidden;
+  display: block;
+ visibility: hidden;
+}
+.tab-content>.active {
   height: auto;
+  overflow: auto;
+  visibility: visible;
 }
+            /* END chart */
