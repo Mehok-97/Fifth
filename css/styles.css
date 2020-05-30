@@ -411,3 +411,20 @@ header.masthead .masthead-heading {
   visibility: visible;
 }
             /* END chart */
+/* developper cards */
+.family{
+  border-radius: 5px;
+  border-style: groove;
+  background-color: gainsboro;
+  margin:10px 0px;
+  padding:0px;
+}
+.family img{
+width: 150px;
+}
+/* end of developper cards */
+/*responsive images*/
+.responsive{
+  width: 100%;
+  height: auto;
+}
