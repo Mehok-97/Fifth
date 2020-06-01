@@ -1,0 +1,393 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+
+	<title>Website Name - Someting</title>
+
+	<link href="css/styles.css" rel="stylesheet" />
+
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+</head>
+
+<body id="page-top">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top" id="mainNav">
+
+		<div class="container">
+
+			<a class="navbar-brand ml-0 mb-1" href="#">
+				<img src="img/Graduation Project Logo.png" height="50" width="45">
+			</a>
+
+			<a class="navbar-brand mr-auto" href="#page-top">MedIT</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
+					class="navbar-toggler-icon"></span></button>
+
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+
+				<ul class="navbar-nav ml-auto mr-1">
+
+					<li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+							Home</a></li>
+
+					<li class="nav-item"><a class="nav-link active" href="#"><span
+								class="fa fa-plus-circle fa-lg"></span> Symptoms</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="./statistics.html"><span
+								class="fa fa-bar-chart fa-lg"></span> Statistics</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="./contact.html"><span
+								class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
+
+					<li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span>
+							About</a></li>
+
+				</ul>
+
+
+				<span class="navbar-text mr-0 btn">
+					<a data-toggle="modal" data-target="#signinModal">
+						<span class="fa fa-sign-in"></span> Sign In
+					</a>
+				</span>
+
+				<span class="navbar-text mr-0 btn">
+					<a data-toggle="modal" data-target="#signupModal">
+						<span class="fa fa-file-text-o"></span> Sign Up
+					</a>
+				</span>
+
+
+			</div>
+		</div>
+	</nav>
+
+ <!-- sign in -->
+ <div id="signinModal" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg" role="content">
+	   <div class="modal-content">
+		  <div class="modal-header">
+			 <h3 class="card-title">Sign In</h3>
+			 <button type="button" class="close" data-dismiss="modal">
+				&times;
+			 </button>
+		  </div>
+	   <div class="modal-body">
+		  <form class="form-signin">
+			 <div class="form-label-group col-12 col-md-5">
+				<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+				<label class="ml-4" for="inputEmail">Email address</label>
+			 </div>
+
+			 <div class="form-label-group col-12 col-md-5">
+				<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+				<label class="ml-4" for="inputPassword">Password</label>
+			 </div>
+
+			 <div class="custom-control custom-checkbox mb-3 ml-3">
+				<input type="checkbox" class="custom-control-input" id="customCheck1">
+				<label class="custom-control-label" for="customCheck1">Remember password</label>
+			 </div>
+			 
+			 <div class="offset-8 offset-md-9 offset-lg-10">
+			 <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
+			 <!--<hr class="my-4">
+			 <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
+			 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign in with Facebook</button>
+			 -->
+			 </div>
+		  </form>
+	   </div>
+	</div>
+ </div>
+</div>
+<!-- sign up -->
+<div id="signupModal" class="modal fade" role="dialog">
+ <div class="modal-dialog modal-lg" role="content">
+	<div class="modal-content">
+	   <div class="modal-header">
+		  <h3 class="card-title">Sign Up</h3>
+		  <button type="button" class="close" data-dismiss="modal">
+			 &times;
+		  </button>
+	   </div>
+	   <div class="modal-body">
+		  <form class="form-signin">
+			 <div class="form-label-group col-12 col-md-5">
+				<input type="text" id="enterName" class="form-control" placeholder="Full Name" required autofocus>
+				<label class="ml-4" for="enterName">Full Name</label>
+			 </div>
+			 
+			 <div class="form-label-group col-md-5">
+				<input type="text" id="enterSpecialization" class="form-control" placeholder="Specialization" required autofocus>
+				<label class="ml-4" for="enterSpecialization">Specialization</label>
+			 </div>
+			 
+			 <div class="form-group row">
+				<div class="form-label-group col-12 col-md-3 ml-3">
+				   <input type="text" id="enterCountry" class="form-control" placeholder="Country" required autofocus>
+				   <label class="ml-4" for="enterCountry">Country</label>
+				</div>
+				<div class="form-label-group col-12 col-md-3">
+				   <input type="text" id="enterCity" class="form-control" placeholder="City" required autofocus>
+				   <label class="ml-4" for="enterCity">City</label>
+				</div>
+				<div class="form-label-group col-12 col-md-3">
+				   <input type="text" id="enterStreet" class="form-control" placeholder="Street" required autofocus>
+				   <label class="ml-4" for="enterStreet">Street</label>
+				</div>
+			 </div>
+			 
+			 <div class="form-label-group col-md-5">
+				<input type="email" id="enterEmail" class="form-control" placeholder="Email address" required autofocus>
+				<label class="ml-4" for="enterEmail">Email address</label>
+			 </div>
+
+			 <div class="form-label-group col-md-5">
+				<input type="password" id="enterPassword" class="form-control" placeholder="Password" required>
+				<label class="ml-4" for="enterPassword">Password</label>
+			 </div>
+			 
+			 <div class="form-label-group col-md-5">
+				<input type="password" id="enterConfirmedPassword" class="form-control" placeholder="Password" required>
+				<label class="ml-4" for="enterConfirmedPassword">Confirm Password</label>
+			 </div>
+			 
+			 <div class="form-label-group center-text py-2">
+				<label for="Confirmation">We will contact you as soon as we confirm your information</label>
+			 </div>
+
+			 <div class="offset-8 offset-md-9 offset-lg-10">
+			 <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
+			 <!-- <hr class="my-4">
+			 <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
+			 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
+			 -->
+			 </div>
+		  </form>
+	   </div>
+	</div>
+ </div>
+</div>
+
+	<header class="masthead">
+		<div class="container">
+			<div class="masthead-subheading">Welcome To Website Name</div>
+			<div class="masthead-heading text-uppercase">Check Your Symptoms</div>
+		</div>
+	</header>
+
+	<div class="container">
+
+		<div class="row row-content-last">
+
+
+
+			<form class="form-signin">
+
+				<div class="row">
+
+					<div class="form-group col-12 col-md-5">
+
+						<label class="h4" for="symptoms">Select Your Symptoms:</label>
+						<select class="form-control" id="symptoms">
+						</select>
+
+					</div>
+
+					<div class="form-group col-12 col-md-1">
+					</div>
+
+					<div class="form-group col-12 col-md-6">
+
+						<label class="h4" for="symptoms">Selected: </label>
+						<p class="text-muted">*Select to remove</p>
+						<select multiple class="form-control" id="symptoms">
+						</select>
+
+					</div>
+
+				</div>
+
+				<br>
+
+				<div class="row justify-content-center">
+
+					<div class="col-12 col-md-4">
+
+						<button type="button" class="btn btn-md btn-block btn-primary my-btn"
+							id="submitbutton">Submit</button>
+
+					</div>
+
+				</div>
+
+				<br>
+
+				<hr class="divider my-4" />
+
+				<br>
+
+				<div class="collapse" id="results">
+
+					<div class="row justify-content-center">
+
+						<div class="form-group col-12 col-md-5">
+
+							<label class="h4" for="possibilites">Possibilites:</label>
+							<textarea disabled class="form-control" id="possibilites"></textarea>
+
+						</div>
+
+					</div>
+
+					<div class="row justify-content-center">
+
+						<div class="form-group col-12 col-md-5">
+
+							<label class="h4" for="suggesteddoctor">Suggested Doctor:</label>
+							<textarea disabled class="form-control" id="suggesteddoctore"></textarea>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<br>
+
+				<div class="row justify-content-center">
+
+					<div class="col-12 col-md-4">
+
+						<button disabled type="button" class="btn btn-md btn-block btn-primary my-btn"
+							data-toggle="collapse" data-target="#results" id="showbutton">Show Results</button>
+
+					</div>
+
+
+				</div>
+
+				<br>
+
+				<hr class="divider my-4" />
+
+				<br>
+
+				<div class="row justify-content-center">
+
+					<label class="h4" for="search">Search for a Doctor:</label>
+
+					<div class="input-group col-md-5">
+
+
+						<input type="text" class="form-control" placeholder="Search" id="search">
+
+						<div class="input-group-btn">
+
+							<button class="btn btn-default" type="button" data-toggle="collapse"
+								data-target="#searchresults">
+								<i class="fa fa-search fa-lg text-primary"></i>
+							</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+				<br>
+
+				<div class="collapse" id="searchresults">
+
+					<div class="row justify-content-center">
+
+						<div class="form-group col-12 col-md-5">
+
+							<label class="h4" for="doctorinfo">Doctor Information:</label>
+							<textarea disabled class="form-control" id="doctorinfo"></textarea>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</form>
+
+
+
+		</div>
+
+
+		<section class="col-12 col-sm page-section bg-myblue text-white">
+
+			<div class="text-center">
+
+				<h2 class="mb-4">Having Any Problems?</h2>
+				<h5 class="mb-4">Feel Free to Contact Us Anytime!</h5>
+				<br>
+				<a class="btn btn-primary btn-dark btn-lg my-btn" href="./contactus"><i class="fa fa-phone"></i> Contact
+					Us</a>
+
+			</div>
+
+		</section>
+
+	</div>
+
+	<footer class="footer py-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-4 text-lg-left">Copyright � Your Website 2020</div>
+				<div class="col-lg-4 my-3 my-lg-0">
+					<a class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-twitter"></i></a><a
+						class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-facebook-f"></i></a><a
+						class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="col-lg-4 text-lg-right"><a class="mr-3" href="#!">Privacy Policy</a><a href="#">Terms of
+						Use</a></div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		$(document).ready(function () {
+
+
+			$("#showbutton").parent().on("click", "#showbutton", function () {
+
+				$("#showbutton").html("Hide Results");
+				$("#showbutton").attr("id", "hidebutton");
+
+			})
+
+				.on("click", "#hidebutton", function () {
+
+					$('#hidebutton').html("Show Results");
+					$("#hidebutton").attr("id", "showbutton");
+
+				});
+
+			$("#submitbutton").click(function () {
+
+				$("#showbutton").prop("disabled", false);
+			});
+
+		});
+	</script>
+</body>
+
+</html>

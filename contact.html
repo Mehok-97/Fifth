@@ -25,29 +25,29 @@
             <img src="img/Graduation Project Logo.png" height="50" width="45">
          </a>
 
-         <a class="navbar-brand mr-auto" href="#page-top">Website Name</a>
+         <a class="navbar-brand mr-auto" href="#page-top">MedIT</a>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
                class="navbar-toggler-icon"></span></button>
 
          <div class="collapse navbar-collapse" id="navbarResponsive">
 
-            <ul class="navbar-nav ml-auto mr-5">
+            <ul class="navbar-nav ml-auto mr-1">
 
-               <li class="nav-item"><a class="nav-link" href="/index.html"><span class="fa fa-home fa-lg"></span>
-                     Home</a>
-               </li>
+               <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+                     Home</a></li>
 
-               <li class="nav-item "><a class="nav-link" href="/statistics.html"><span
-                        class="fa fa-bar-chart fa-lg"></span>
-                     Statistics</a></li>
+               <li class="nav-item"><a class="nav-link" href="./symptoms.html"><span
+                        class="fa fa-plus-circle fa-lg"></span> Symptoms</a></li>
 
-               <li class="nav-item active"><a class="nav-link" href="#"><span
+               <li class="nav-item"><a class="nav-link" href="./statistics.html"><span
+                        class="fa fa-bar-chart fa-lg"></span> Statistics</a></li>
+
+               <li class="nav-item"><a class="nav-link active" href="#"><span
                         class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="/about.html"><span class="fa fa-info fa-lg"></span>
-                     About</a>
-               </li>
+               <li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span>
+                     About</a></li>
 
             </ul>
 
@@ -68,50 +68,165 @@
          </div>
       </div>
    </nav>
+
+    <!-- sign in -->
+    <div id="signinModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="card-title">Sign In</h3>
+               <button type="button" class="close" data-dismiss="modal">
+                  &times;
+               </button>
+            </div>
+         <div class="modal-body">
+            <form class="form-signin">
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label class="ml-4" for="inputEmail">Email address</label>
+               </div>
+
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="inputPassword">Password</label>
+               </div>
+
+               <div class="custom-control custom-checkbox mb-3 ml-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+               </div>
+               
+               <div class="offset-8 offset-md-9 offset-lg-10">
+               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
+               <!--<hr class="my-4">
+               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
+               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign in with Facebook</button>
+               -->
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- sign up -->
+<div id="signupModal" class="modal fade" role="dialog">
+   <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h3 class="card-title">Sign Up</h3>
+            <button type="button" class="close" data-dismiss="modal">
+               &times;
+            </button>
+         </div>
+         <div class="modal-body">
+            <form class="form-signin">
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="text" id="enterName" class="form-control" placeholder="Full Name" required autofocus>
+                  <label class="ml-4" for="enterName">Full Name</label>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="text" id="enterSpecialization" class="form-control" placeholder="Specialization" required autofocus>
+                  <label class="ml-4" for="enterSpecialization">Specialization</label>
+               </div>
+               
+               <div class="form-group row">
+                  <div class="form-label-group col-12 col-md-3 ml-3">
+                     <input type="text" id="enterCountry" class="form-control" placeholder="Country" required autofocus>
+                     <label class="ml-4" for="enterCountry">Country</label>
+                  </div>
+                  <div class="form-label-group col-12 col-md-3">
+                     <input type="text" id="enterCity" class="form-control" placeholder="City" required autofocus>
+                     <label class="ml-4" for="enterCity">City</label>
+                  </div>
+                  <div class="form-label-group col-12 col-md-3">
+                     <input type="text" id="enterStreet" class="form-control" placeholder="Street" required autofocus>
+                     <label class="ml-4" for="enterStreet">Street</label>
+                  </div>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="email" id="enterEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label class="ml-4" for="enterEmail">Email address</label>
+               </div>
+
+               <div class="form-label-group col-md-5">
+                  <input type="password" id="enterPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="enterPassword">Password</label>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="password" id="enterConfirmedPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="enterConfirmedPassword">Confirm Password</label>
+               </div>
+               
+               <div class="form-label-group center-text py-2">
+                  <label for="Confirmation">We will contact you as soon as we confirm your information</label>
+               </div>
+
+               <div class="offset-8 offset-md-9 offset-lg-10">
+               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
+               <!-- <hr class="my-4">
+               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
+               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
+               -->
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+
    <header class="masthead">
       <div class="container">
          <div class="masthead-subheading">Welcome To Our Studio!</div>
          <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
       </div>
    </header>
    <div class="container">
-      <div class="row row-content">
-         <div class="col-6 col-lg-3 text-center align-self-center">
+      <div class="row row-content-last">
+         <div class="d-none d-sm-block col-6 col-lg-3 text-center align-self-center">
             <em><strong>designer</strong></em>
             <img src="img/designer.gif" id="designer" alt="designer">
          </div>
-         <div class="col-6 col-lg-3 text-center order-md-9 align-self-center">
+         <div class="d-none d-sm-block col-6 col-lg-3 text-center order-lg-9 align-self-center">
             <em> <strong>programmer</strong> </em>
             <img src="img/programmer.gif" id="coder" alt="programmer">
          </div>
-         <div class="col-12 col-lg-6 order-md-5">
-            <form>
+         <div class="col-12 col-lg-6 order-lg-5 py-4">
+
+            <form class="form-signin">
+
                <div class="form-group row">
                   <label for="firstname" class="col-md-2 col-form-label">First Name</label>
                   <div class="col-md-10">
-                     <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
+                     <input type="text" class="form-control form-input-mine" id="firstname" name="firstname"
+                        placeholder="First Name">
                   </div>
                </div>
                <div class="form-group row">
                   <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
                   <div class="col-md-10">
-                     <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
+                     <input type="text" class="form-control form-input-mine" id="lastname" name="lastname"
+                        placeholder="Last Name">
                   </div>
                </div>
                <div class="form-group row">
                   <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
                   <div class="col-5 col-md-3">
-                     <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Area Code">
+                     <input type="tel" class="form-control form-input-mine" id="areacode" name="areacode"
+                        placeholder="Area Code">
                   </div>
                   <div class="col-5 col-md-7">
-                     <input type="tel" class="form-control" id="telnum" name="telnum" placeholder="Tel. Number">
+                     <input type="tel" class="form-control form-input-mine" id="telnum" name="telnum"
+                        placeholder="Tel. Number">
                   </div>
                </div>
                <div class="form-group row">
                   <label for="emailid" class="col-md-2 col-form-label">Email</label>
                   <div class="col-md-10">
-                     <input type="email" class="form-control" id="emailid" name="email" placeholder="Email">
+                     <input type="email" class="form-control form-input-mine" id="emailid" name="email"
+                        placeholder="Email">
                   </div>
                </div>
                <div class="form-group row">
@@ -122,7 +237,7 @@
                      </div>
                   </div>
                   <div class="col-md-3 offset-md-1">
-                     <select class="form-cotrol">
+                     <select disabled class="form-cotrol form-input-mine" id="contactselect">
                         <option>Tel</option>
                         <option>Email</option>
                      </select>
@@ -131,17 +246,20 @@
                <div class="form-group row">
                   <label for="feedback" class="col-md-2 col-form-label">Your Feedback</label>
                   <div class="col-md-10">
-                     <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
+                     <textarea class="form-control form-input-mine" id="feedback" name="feedback" rows="12"></textarea>
                   </div>
                </div>
+               <br>
                <div class="form-group row">
                   <div class="offset-md-2 col-md-10">
-                     <button type="submit" class="btn btn-primary">Send Feedback</button>
+                     <button type="submit" class="btn btn-primary my-btn">Send Feedback</button>
                   </div>
                </div>
+
             </form>
+
          </div>
- 
+
       </div>
    </div>
 
@@ -163,6 +281,33 @@
    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
    <script src="js/scripts.js"></script>
+
+   <script>
+
+      $(document).ready(function () {
+
+         $("#approve").click(function () {
+
+            $("#approve").parent().on("click", "#approve", function () {
+
+               $("#contactselect").prop("disabled", false);
+               $("#approve").attr("id", "disapprove");
+
+            })
+
+               .on("click", "#disapprove", function () {
+
+                  $("#contactselect").prop("disabled", true);
+                  $("#disapprove").attr("id", "approve");
+
+               });
+
+         });
+
+
+
+      });
+   </script>
 </body>
 
 </html>

@@ -1,18 +1,18 @@
 (function ($) {
-
+	
     var navbarCollapse = function () {
-        if ($("#mainNav").offset().top > 100) {
-            $("#mainNav").addClass("navbar-shrink");
-        } else {
-            $("#mainNav").removeClass("navbar-shrink");
-        }
-    };
-
-    navbarCollapse();
-
-    $(window).scroll(navbarCollapse);
-
-})(jQuery);
+       if ($("#mainNav").offset().top > 100) {
+           $("#mainNav").addClass("navbar-shrink");
+       } else {
+           $("#mainNav").removeClass("navbar-shrink");
+       }
+   };
+   
+   navbarCollapse();
+   
+   $(window).scroll(navbarCollapse);
+   
+   })(jQuery);
 
 
 
@@ -161,7 +161,6 @@ function drawChart3() {
         ['Watch TV', 2],
         ['Sleep', 7]
     ]);
-
     var options = {
         title: 'My Daily Activities',
         pieHole: 0.4,
@@ -216,16 +215,31 @@ google.charts.setOnLoadCallback(drawRegionsMap);
 
 function drawRegionsMap() {
     var data = google.visualization.arrayToDataTable([
-        ['Country', 'Popularity'],
-        ['Germany', 200],
-        ['United States', 300],
-        ['Brazil', 400],
-        ['Canada', 500],
-        ['France', 600],
-        ['RU', 700]
+        ['City', 'NOP'],
+        [{v:'SY-HA',f:"Al-Hasakah"},800],  
+        [{v:'SY-lA',f:'Latakia'}, 200],/*  اللاذقية */
+        [{v:'SY-QU',f:'Quneitra'}, 300],/*  قنيطرة */
+        [{v:'SY-RA',f:'Ar-Raqqah'}, 1100],/* الرقة */
+        [{v:'SY-SU',f:'As-Suwayda'}, 100],/* سويداء */
+        [{v:'SY-DR',f:'Daraa'}, 900],/* درعا */
+        [{v:'SY-DY',f:'Deir ez-Zor'}, 400],/* ديرالزور */
+        [{v:'SY-DI',f:'Damascus'}, 800],/* دمشق */
+        [{v:'SY-HL',f:'Aleppo'}, 400],/* حلب */
+        [{v:'SY-HM',f:'Hama'}, 700],/* حماه */
+        [{v:'SY-HI',f:'Homs'}, 900],/* حوومص */
+        [{v:'SY-ID',f:'Idlib'}, 100],/* ادلب */
+        [{v:'SY-RD',f:'Rif Dimashq'}, 300],/* ريف دمشق */
+        [{v:'SY-TA',f:'Tartus'}, 1000],/* طرطوس */
+        
     ]);
 
-    var options = {};
+    var options = {
+        region:'SY',
+        resolution: 'provinces',
+/*         domain:'SY',
+        enableRegionInteractivity:'true', */
+        colorAxis: { colors: ['#c1c1cd', 'green']}
+    };
 
     var chart = new google.visualization.GeoChart(document.getElementById('geochart'));
 

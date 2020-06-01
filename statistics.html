@@ -3,11 +3,12 @@
 
 <head>
    <meta charset="utf-8" />
+   <meta name='author' content='MapBox' />
+   <meta name='description' content='simply edit geojson map data' />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-   <meta name="description" content="" />
-   <meta name="author" content="" />
 
    <title>Website Name - Someting</title>
+   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
@@ -15,7 +16,7 @@
 
 </head>
 
-<body id="page-top">
+<body>
 
    <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top" id="mainNav">
 
@@ -25,28 +26,29 @@
             <img src="img/Graduation Project Logo.png" height="50" width="45">
          </a>
 
-         <a class="navbar-brand mr-auto" href="#page-top">Website Name</a>
+         <a class="navbar-brand mr-auto" href="#page-top">MedIT</a>
 
          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
                class="navbar-toggler-icon"></span></button>
 
          <div class="collapse navbar-collapse" id="navbarResponsive">
 
-            <ul class="navbar-nav ml-auto mr-5">
+            <ul class="navbar-nav ml-auto mr-1">
 
-               <li class="nav-item"><a class="nav-link" href="/index.html"><span class="fa fa-home fa-lg"></span>
-                     Home</a>
-               </li>
+               <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+                     Home</a></li>
 
-               <li class="nav-item active"><a class="nav-link" href="#"><span class="fa fa-bar-chart fa-lg"></span>
+               <li class="nav-item"><a class="nav-link" href="./symptoms.html"><span
+                        class="fa fa-plus-circle fa-lg"></span> Symptoms</a></li>
+
+               <li class="nav-item"><a class="nav-link active" href="#"><span class="fa fa-bar-chart fa-lg"></span>
                      Statistics</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="/contact.html"><span
+               <li class="nav-item"><a class="nav-link" href="./contact.html"><span
                         class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="/about.html"><span class="fa fa-info fa-lg"></span>
-                     About</a>
-               </li>
+               <li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span>
+                     About</a></li>
 
             </ul>
 
@@ -67,46 +69,159 @@
          </div>
       </div>
    </nav>
+    <!-- sign in -->
+    <div id="signinModal" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg" role="content">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h3 class="card-title">Sign In</h3>
+               <button type="button" class="close" data-dismiss="modal">
+                  &times;
+               </button>
+            </div>
+         <div class="modal-body">
+            <form class="form-signin">
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label class="ml-4" for="inputEmail">Email address</label>
+               </div>
+
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="inputPassword">Password</label>
+               </div>
+
+               <div class="custom-control custom-checkbox mb-3 ml-3">
+                  <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <label class="custom-control-label" for="customCheck1">Remember password</label>
+               </div>
+               
+               <div class="offset-8 offset-md-9 offset-lg-10">
+               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
+               <!--<hr class="my-4">
+               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
+               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign in with Facebook</button>
+               -->
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- sign up -->
+<div id="signupModal" class="modal fade" role="dialog">
+   <div class="modal-dialog modal-lg" role="content">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h3 class="card-title">Sign Up</h3>
+            <button type="button" class="close" data-dismiss="modal">
+               &times;
+            </button>
+         </div>
+         <div class="modal-body">
+            <form class="form-signin">
+               <div class="form-label-group col-12 col-md-5">
+                  <input type="text" id="enterName" class="form-control" placeholder="Full Name" required autofocus>
+                  <label class="ml-4" for="enterName">Full Name</label>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="text" id="enterSpecialization" class="form-control" placeholder="Specialization" required autofocus>
+                  <label class="ml-4" for="enterSpecialization">Specialization</label>
+               </div>
+               
+               <div class="form-group row">
+                  <div class="form-label-group col-12 col-md-3 ml-3">
+                     <input type="text" id="enterCountry" class="form-control" placeholder="Country" required autofocus>
+                     <label class="ml-4" for="enterCountry">Country</label>
+                  </div>
+                  <div class="form-label-group col-12 col-md-3">
+                     <input type="text" id="enterCity" class="form-control" placeholder="City" required autofocus>
+                     <label class="ml-4" for="enterCity">City</label>
+                  </div>
+                  <div class="form-label-group col-12 col-md-3">
+                     <input type="text" id="enterStreet" class="form-control" placeholder="Street" required autofocus>
+                     <label class="ml-4" for="enterStreet">Street</label>
+                  </div>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="email" id="enterEmail" class="form-control" placeholder="Email address" required autofocus>
+                  <label class="ml-4" for="enterEmail">Email address</label>
+               </div>
+
+               <div class="form-label-group col-md-5">
+                  <input type="password" id="enterPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="enterPassword">Password</label>
+               </div>
+               
+               <div class="form-label-group col-md-5">
+                  <input type="password" id="enterConfirmedPassword" class="form-control" placeholder="Password" required>
+                  <label class="ml-4" for="enterConfirmedPassword">Confirm Password</label>
+               </div>
+               
+               <div class="form-label-group center-text py-2">
+                  <label for="Confirmation">We will contact you as soon as we confirm your information</label>
+               </div>
+
+               <div class="offset-8 offset-md-9 offset-lg-10">
+               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
+               <!-- <hr class="my-4">
+               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
+               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
+               -->
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>
    <header class="masthead">
       <div class="container">
          <div class="masthead-subheading">Welcome To Our Studio!</div>
          <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-         <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
       </div>
    </header>
    <div class="container">
-      <ul class="nav nav-tabs">
-         <li class="nav-item">
-            <a class="nav-link active" href="#first" role="tab" data-toggle="tab">First</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#second" role="tab" data-toggle="tab">Second</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#third" role="tab" data-toggle="tab">Third</a>
-         </li>
-      </ul>
-      <div class="tab-content">
-         <div role="tabpanel" class="tab-pane fade show active" id="first">
-            <!--   <div class=" col-6" id="piechart"></div> -->
-            <div class="row">
-               <div class="col-12 col-md-6" id="dountchart1"></div>
-               <div class="col-12 col-md-6" id="dountchart2"></div>
+      <div class="row">
+         <div id="map1"></div>
+      </div>
+      <div class="row">
+         <div class="col">
+            <ul class="nav nav-tabs">
+               <li class="nav-item">
+                  <a class="nav-link active" href="#first" role="tab" data-toggle="tab">First</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#second" role="tab" data-toggle="tab">Second</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#third" role="tab" data-toggle="tab">Third</a>
+               </li>
+            </ul>
+
+            <div class="tab-content">
+               <div role="tabpanel" class="tab-pane fade show active" id="first">
+                  <!--   <div class=" col-6" id="piechart"></div> -->
+                  <div class="row">
+                     <div class="col-12 col-md-6" id="dountchart1"></div>
+                     <div class="col-12 col-md-6" id="dountchart2"></div>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="second">
+                  <!--  <div class="col-md" id="guagechart"></div> -->
+                  <div class="row">
+                     <div class="col-12 col-md-6" id="dountchart3"></div>
+                     <div class="col-12 col-md-6" id="columnchart1"></div>
+                  </div>
+               </div>
+               <div role="tabpanel" class="tab-pane fade" id="third">
+                  <div id="geochart"></div>
+               </div>
             </div>
-         </div>
-         <div role="tabpanel" class="tab-pane fade" id="second">
-            <!--  <div class="col-md" id="guagechart"></div> -->
-            <div class="row">
-               <div class="col-12 col-md-6" id="dountchart3"></div>
-               <div class="col-12 col-md-6" id="columnchart1"></div>
-            </div>
-         </div>
-         <div role="tabpanel" class="tab-pane fade" id="third">
-            <div id="geochart"></div>
          </div>
       </div>
    </div>
-
    <footer class="footer py-4">
       <div class="container">
          <div class="row align-items-center">
@@ -121,11 +236,30 @@
          </div>
       </div>
    </footer>
+   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
    <script src="js/scripts.js"></script>
+   <script>
+      var mymap = L.map('map1').setView([43.370917, -80.983042], 13);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+         maxZoom: 18,
+         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+         id: 'mapbox.streets'
+      }).addTo(mymap);
+
+      var geojson = new L.GeoJSON.AJAX("StratfordBoundary.geojson");
+      geojson.on('data:loaded', function () {
+         geojson.addTo(mymap);
+      });
+   </script>
 </body>
 
 </html>

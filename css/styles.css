@@ -16,34 +16,24 @@
 .row-content-last {
 	margin:10px 0px 10px 0px;
 	padding: 50px 0px 50px 0px;
-	border-bottom: 1px ridge;
+	border-bottom: 0px ridge;
+	min-height: 400px;
+}
+
+.row-content-cards {
+	margin:10px 0px 10px 0px;
+	padding: 0px 0px 50px 0px;
+	border-bottom: 0px ridge;
 	min-height: 400px;
 }
 
 .footer{
 	background-color: #D1C4E9;
 	margin: 0px auto;
-	padding: 20px 0px 20px 0px;
+  padding: 20px 0px 20px 0px;
+  font-size: 0.9rem;
+  font-family: serif;
 }
-
-.jumbotron{
-	padding: 70px 30px 70px 30px;
-	margin: 0px auto;
-	background: #9575CD;
-	color: floralwhite;
-}
-
-.address{
-	font-size: 80%;
-	margin: 0px auto;
-	color: #0f0f0f;
-}
-
-.body{
-	padding: 50px 0px 0px 0px;
-	z-index: 0;
-}
-
 .navbar-dark{
 	font-family: serif;
 	font-size: 18px;
@@ -67,36 +57,35 @@
 }
 
 .carousel {
-	background:#512DA8;
+	background:#fff;
 }
 
 .carousel-item {
-	height: 300px;
+	height: 400px;
 }
 
 .carousel-item img {
 	position: absolute;
 	top: 0;
 	left: 0;
-	min-height: 300px;
+	min-height: 350px;
 }
-
+@media (min-width: 992px) {
+	
+  .carousel-item {
+    height: 600px;
+  }
+  .carousel-item img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-height: 300px;
+	
+}
+	
+}
 .paddingrows{
 	padding:10px 0px 10px 0px;
-}
-
-.btn-green-background{
-	color:#fff;
-	background-color:#22BC22;
-}
-
-.btn-green-background:hover {
-  background-color: #008000;
-  border-color: #228B22;
-}
-
-.btn-green-background:focus, .btn-green-background.focus {
-  box-shadow: 0 0 0 0.2rem rgba(0, 128, 0, 0.5);
 }
 
 #carouselButton {
@@ -113,6 +102,11 @@
   border: 0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-header{
+	border: none;
+	background-color: transparent;
 }
 
 .card-signin .card-title {
@@ -240,10 +234,14 @@
   color: #fff;
   letter-spacing: 0.0625em;
 }
-#mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
+#mainNav .navbar-nav .nav-item .nav-link.active{
   color: rgba(35,255,95,0.8);
+  font-weight: 600;
 }
-
+#mainNav .navbar-nav .nav-item .nav-link:hover{
+	color: rgba(35,255,95,0.8);
+	font-size:100%;
+}
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -285,11 +283,12 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../img/Do-not-misuse-your-health.jpg");
+  background-image: url("../img/Do-not-misuse-your-health2.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  height: 800px;
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -325,6 +324,11 @@ header.masthead .masthead-heading {
   }
 }
 
+.py-6 {
+  padding-bottom: 3rem !important;
+  padding-top: 3rem !important;
+}
+
 .py-4 {
   padding-bottom: 1.5rem !important;
   padding-top: 1.5rem !important;
@@ -340,9 +344,38 @@ header.masthead .masthead-heading {
   margin-bottom: 1rem !important;
 }
 
+.my-4 {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
 .mx-2 {
   margin-right: 0.5rem !important;
   margin-left: 0.5rem !important;
+}
+
+.mt-5 {
+  margin-top: 3rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.py-0{
+	padding-bottom: 0 !important;
+}
+
+.py-02{
+	padding-top: 0 !important;
 }
 
 .btn-social {
@@ -385,16 +418,32 @@ header.masthead .masthead-heading {
   box-shadow: 0 0 0 0.2rem rgba(82, 88, 93, 0.5);
 }
 
-.footer {
-	
-  text-align: center;
-  font-size: 0.9rem;
-  font-family: serif; 
-  }
-  
-  .center-text{
+.center-text{
 	text-align: center;
 }
+.page-section {
+  padding: 8rem 0;
+}
+
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: #007bff;
+}
+
+.my-btn{
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .2rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.bg-myblue{
+	background-color: #0984E3;
+}
+
                  /* chart */
 #dountchart1,#dountchart2,#dountchart3{
  height: 250px;
@@ -427,4 +476,14 @@ width: 150px;
 .responsive{
   width: 100%;
   height: auto;
+}
+/* geojson */
+#map1 { 
+  position: relative;
+  height: 500px;
+   width: 550px }
+/* end geojson */
+.form-input-mine {
+  height: auto;
+  border-radius: 2rem;
 }
