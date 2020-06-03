@@ -30,10 +30,13 @@
 .footer{
 	background-color: #D1C4E9;
 	margin: 0px auto;
-  padding: 20px 0px 20px 0px;
-  font-size: 0.9rem;
-  font-family: serif;
+	padding: 20px 0px 20px 0px;
+	text-align: center;
+    font-size: 0.9rem;
+    font-family: serif;
 }
+
+
 .navbar-dark{
 	font-family: serif;
 	font-size: 18px;
@@ -69,13 +72,16 @@
 	top: 0;
 	left: 0;
 	min-height: 350px;
+	
 }
+
 @media (min-width: 992px) {
 	
-  .carousel-item {
-    height: 600px;
-  }
-  .carousel-item img {
+.carousel-item {
+	height: 600px;
+}
+
+.carousel-item img {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -84,6 +90,7 @@
 }
 	
 }
+
 .paddingrows{
 	padding:10px 0px 10px 0px;
 }
@@ -124,7 +131,7 @@
 }
 
 .form-signin .btn {
-  font-size: 80%;
+  font-size: 100%;
   border-radius: 5rem;
   letter-spacing: .1rem;
   font-weight: bold;
@@ -162,7 +169,7 @@
   transition: all .1s ease-in-out;
 }
 
-.form-label-group input::-webkit-input-placeholder {
+/*.form-label-group input::-webkit-input-placeholder {
   color: transparent;
 }
 
@@ -192,7 +199,7 @@
   padding-bottom: calc(var(--input-padding-y) / 3);
   font-size: 12px;
   color: rgba(0,0,0,0);
-}
+} */
 
 .btn-google {
   color: white;
@@ -223,7 +230,7 @@
   font-family: serif;
   font-weight: 700;
   letter-spacing: 0.0625em;
-  text-transform: uppercase;
+ 
 }
 #mainNav .navbar-brand img {
   height: 1.5rem;
@@ -234,14 +241,16 @@
   color: #fff;
   letter-spacing: 0.0625em;
 }
-#mainNav .navbar-nav .nav-item .nav-link.active{
+#mainNav .navbar-nav .nav-item .nav-link.active {
   color: rgba(35,255,95,0.8);
   font-weight: 600;
 }
+
 #mainNav .navbar-nav .nav-item .nav-link:hover{
 	color: rgba(35,255,95,0.8);
 	font-size:100%;
 }
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -249,14 +258,21 @@
     border: none;
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
+    margin-left: -50px;
+  }
+  #mainNav .navbar-text:last-child{
+    margin-right: -62px !important;
+    float: right;
   }
    #mainNav .navbar-brand {
     font-size: 1.5em;
     transition: font-size 0.3s ease-in-out;
+
   }
   #mainNav .navbar-brand img {
     height: 2rem;
     transition: height 0.3s ease-in-out;
+    
   }
   #mainNav.navbar-shrink {
     padding-top: 1rem;
@@ -273,9 +289,7 @@
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
   }
-  #mainNav .navbar-nav .nav-item:last-child {
-    margin-right: 0;
-  }
+
 }
 
 header.masthead {
@@ -339,6 +353,14 @@ header.masthead .masthead-heading {
   padding-top: 0.75rem !important;
 }
 
+.pb-4 {
+  padding-bottom: 1.5rem !important;
+}
+
+.pb-8 {
+  padding-bottom: 6rem !important;
+}
+
 .my-3 {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
@@ -377,7 +399,9 @@ header.masthead .masthead-heading {
 .py-02{
 	padding-top: 0 !important;
 }
-
+.ml-sp{
+  margin-left: 80px;
+}
 .btn-social {
   height: 2.5rem;
   width: 2.5rem;
@@ -421,6 +445,7 @@ header.masthead .masthead-heading {
 .center-text{
 	text-align: center;
 }
+
 .page-section {
   padding: 8rem 0;
 }
@@ -477,13 +502,48 @@ width: 150px;
   width: 100%;
   height: auto;
 }
-/* geojson */
-#map1 { 
-  position: relative;
-  height: 500px;
-   width: 550px }
-/* end geojson */
+
 .form-input-mine {
   height: auto;
   border-radius: 2rem;
 }
+
+.my-btn-2{
+	font-size: 80% !important;
+	border-radius: 1rem !important;
+	letter-spacing: .1rem !important;
+    font-weight: 600 !important;
+    padding: 0.4rem !important;
+}
+
+.my-btn-3{
+	font-size: 110% !important;
+	border-radius: 3rem !important;
+	letter-spacing: .2rem !important;
+    font-weight: bold !important;
+    padding: 1rem !important;
+}
+
+.my-btn-2:hover{
+	font-size: 60% !important ;
+}
+
+.signup-btn-color {
+	background-color: #A99FA0 !important;
+}
+
+.signup-btn-color:hover {
+	background-color: #666262 !important;
+}
+
+.text-red{
+	color: rgba(255,0,0,0.7)!important;
+}
+
+/*geojson*/
+#map1{
+	position: relative;
+	height: 500px;
+	width: 550px;
+}
+/*end geojson*/

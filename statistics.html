@@ -2,264 +2,426 @@
 <html lang="en">
 
 <head>
-   <meta charset="utf-8" />
-   <meta name='author' content='MapBox' />
-   <meta name='description' content='simply edit geojson map data' />
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description"
+		content="Guiding website for patients, and a supporting website for doctors. Provides patients with a suggested doctor based on their symptoms, and provides doctors with statistics to support and simplify their work." />
+	<meta name="author" content="GMFM" />
 
-   <title>Website Name - Someting</title>
-   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-   <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
-   <link href="css/styles.css" rel="stylesheet" />
+	<link rel="shortcut icon" href="./img/Graduation-Project-Logo.ico" />
+	<title>Med IT</title>
+
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" /><!-- for geojson -->
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+	<link href="css/styles.css" rel="stylesheet" />
 
 </head>
 
-<body>
+<body id="page-top">
 
-   <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top" id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top" id="mainNav">
 
-      <div class="container">
+		<div class="container">
 
-         <a class="navbar-brand ml-0 mb-1" href="#">
-            <img src="img/Graduation Project Logo.png" height="50" width="45">
-         </a>
+			<a class="navbar-brand ml-0 mb-1" href="#">
+				<img src="img/Graduation Project Logo.png" height="50" width="45">
+			</a>
 
-         <a class="navbar-brand mr-auto" href="#page-top">MedIT</a>
+			<a class="navbar-brand mr-auto" href="#page-top">Med IT</a>
 
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
-               class="navbar-toggler-icon"></span></button>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
+					class="navbar-toggler-icon"></span></button>
 
-         <div class="collapse navbar-collapse" id="navbarResponsive">
+			<div class="collapse navbar-collapse" id="navbarResponsive">
 
-            <ul class="navbar-nav ml-auto mr-1">
+				<ul class="navbar-nav ml-auto mr-1">
 
-               <li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
-                     Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="./index.html"><span class="fa fa-home fa-lg"></span>
+							Home</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="./symptoms.html"><span
-                        class="fa fa-plus-circle fa-lg"></span> Symptoms</a></li>
+					<li class="nav-item"><a class="nav-link" href="./symptoms.html"><span
+								class="fa fa-plus-circle fa-lg"></span> Symptoms</a></li>
 
-               <li class="nav-item"><a class="nav-link active" href="#"><span class="fa fa-bar-chart fa-lg"></span>
-                     Statistics</a></li>
+					<li class="nav-item"><a class="nav-link active" href="#"><span class="fa fa-bar-chart fa-lg"></span>
+							Statistics</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="./contact.html"><span
-                        class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
+					<li class="nav-item"><a class="nav-link" href="./contactus.html"><span
+								class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
 
-               <li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span>
-                     About</a></li>
+					<li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span>
+							About</a></li>
 
-            </ul>
-
-
-            <span class="navbar-text mr-0 btn">
-               <a data-toggle="modal" data-target="#signinModal">
-                  <span class="fa fa-sign-in"></span> Sign In
-               </a>
-            </span>
-
-            <span class="navbar-text mr-0 btn">
-               <a data-toggle="modal" data-target="#signupModal">
-                  <span class="fa fa-file-text-o"></span> Sign Up
-               </a>
-            </span>
+				</ul>
 
 
-         </div>
-      </div>
-   </nav>
-    <!-- sign in -->
-    <div id="signinModal" class="modal fade" role="dialog">
-      <div class="modal-dialog modal-lg" role="content">
-         <div class="modal-content">
-            <div class="modal-header">
-               <h3 class="card-title">Sign In</h3>
-               <button type="button" class="close" data-dismiss="modal">
-                  &times;
-               </button>
-            </div>
-         <div class="modal-body">
-            <form class="form-signin">
-               <div class="form-label-group col-12 col-md-5">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                  <label class="ml-4" for="inputEmail">Email address</label>
-               </div>
+				<span class="navbar-text mr-0 btn">
+					<form class="form-signin">
+						<a type="button" class="btn my-btn-2 btn-success" data-toggle="modal"
+							data-target="#signinModal">
+							<span class="fa fa-sign-in"></span> Sign In
+						</a>
+					</form>
+				</span>
 
-               <div class="form-label-group col-12 col-md-5">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                  <label class="ml-4" for="inputPassword">Password</label>
-               </div>
+				<span class="navbar-text mr-0 btn">
+					<form class="form-signin">
+						<a type="button" class="btn my-btn-2 signup-btn-color" data-toggle="modal"
+							data-target="#signupModal">
+							<span class="fa fa-user-plus"></span> Sign Up
+						</a>
+					</form>
+				</span>
 
-               <div class="custom-control custom-checkbox mb-3 ml-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck1">
-                  <label class="custom-control-label" for="customCheck1">Remember password</label>
-               </div>
-               
-               <div class="offset-8 offset-md-9 offset-lg-10">
-               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
-               <!--<hr class="my-4">
-               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
-               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign in with Facebook</button>
-               -->
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
-</div>
-<!-- sign up -->
-<div id="signupModal" class="modal fade" role="dialog">
-   <div class="modal-dialog modal-lg" role="content">
-      <div class="modal-content">
-         <div class="modal-header">
-            <h3 class="card-title">Sign Up</h3>
-            <button type="button" class="close" data-dismiss="modal">
-               &times;
-            </button>
-         </div>
-         <div class="modal-body">
-            <form class="form-signin">
-               <div class="form-label-group col-12 col-md-5">
-                  <input type="text" id="enterName" class="form-control" placeholder="Full Name" required autofocus>
-                  <label class="ml-4" for="enterName">Full Name</label>
-               </div>
-               
-               <div class="form-label-group col-md-5">
-                  <input type="text" id="enterSpecialization" class="form-control" placeholder="Specialization" required autofocus>
-                  <label class="ml-4" for="enterSpecialization">Specialization</label>
-               </div>
-               
-               <div class="form-group row">
-                  <div class="form-label-group col-12 col-md-3 ml-3">
-                     <input type="text" id="enterCountry" class="form-control" placeholder="Country" required autofocus>
-                     <label class="ml-4" for="enterCountry">Country</label>
-                  </div>
-                  <div class="form-label-group col-12 col-md-3">
-                     <input type="text" id="enterCity" class="form-control" placeholder="City" required autofocus>
-                     <label class="ml-4" for="enterCity">City</label>
-                  </div>
-                  <div class="form-label-group col-12 col-md-3">
-                     <input type="text" id="enterStreet" class="form-control" placeholder="Street" required autofocus>
-                     <label class="ml-4" for="enterStreet">Street</label>
-                  </div>
-               </div>
-               
-               <div class="form-label-group col-md-5">
-                  <input type="email" id="enterEmail" class="form-control" placeholder="Email address" required autofocus>
-                  <label class="ml-4" for="enterEmail">Email address</label>
-               </div>
 
-               <div class="form-label-group col-md-5">
-                  <input type="password" id="enterPassword" class="form-control" placeholder="Password" required>
-                  <label class="ml-4" for="enterPassword">Password</label>
-               </div>
-               
-               <div class="form-label-group col-md-5">
-                  <input type="password" id="enterConfirmedPassword" class="form-control" placeholder="Password" required>
-                  <label class="ml-4" for="enterConfirmedPassword">Confirm Password</label>
-               </div>
-               
-               <div class="form-label-group center-text py-2">
-                  <label for="Confirmation">We will contact you as soon as we confirm your information</label>
-               </div>
+			</div>
+		</div>
+	</nav>
 
-               <div class="offset-8 offset-md-9 offset-lg-10">
-               <button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
-               <!-- <hr class="my-4">
-               <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
-               <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
-               -->
-               </div>
-            </form>
-         </div>
-      </div>
-   </div>
-</div>
-   <header class="masthead">
-      <div class="container">
-         <div class="masthead-subheading">Welcome To Our Studio!</div>
-         <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
-      </div>
-   </header>
-   <div class="container">
-      <div class="row">
-         <div id="map1"></div>
-      </div>
-      <div class="row">
-         <div class="col">
-            <ul class="nav nav-tabs">
-               <li class="nav-item">
-                  <a class="nav-link active" href="#first" role="tab" data-toggle="tab">First</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#second" role="tab" data-toggle="tab">Second</a>
-               </li>
-               <li class="nav-item">
-                  <a class="nav-link" href="#third" role="tab" data-toggle="tab">Third</a>
-               </li>
-            </ul>
+	<div id="signinModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Sign In</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="form-signin">
+						<div class="form-label-group col-12 col-md-7 col-lg-6">
+							<input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+								required autofocus>
+						</div>
 
-            <div class="tab-content">
-               <div role="tabpanel" class="tab-pane fade show active" id="first">
-                  <!--   <div class=" col-6" id="piechart"></div> -->
-                  <div class="row">
-                     <div class="col-12 col-md-6" id="dountchart1"></div>
-                     <div class="col-12 col-md-6" id="dountchart2"></div>
-                  </div>
-               </div>
-               <div role="tabpanel" class="tab-pane fade" id="second">
-                  <!--  <div class="col-md" id="guagechart"></div> -->
-                  <div class="row">
-                     <div class="col-12 col-md-6" id="dountchart3"></div>
-                     <div class="col-12 col-md-6" id="columnchart1"></div>
-                  </div>
-               </div>
-               <div role="tabpanel" class="tab-pane fade" id="third">
-                  <div id="geochart"></div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <footer class="footer py-4">
-      <div class="container">
-         <div class="row align-items-center">
-            <div class="col-lg-4 text-lg-left">Copyright &copy; Your Website 2020</div>
-            <div class="col-lg-4 my-3 my-lg-0">
-               <a class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-twitter"></i></a><a
-                  class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-facebook-f"></i></a><a
-                  class="btn btn-dark btn-social-icon mx-2" href="#"><i class="fa fa-linkedin"></i></a>
-            </div>
-            <div class="col-lg-4 text-lg-right"><a class="mr-3" href="#!">Privacy Policy</a><a href="#">Terms of Use</a>
-            </div>
-         </div>
-      </div>
-   </footer>
-   <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
-   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-   <script src="js/scripts.js"></script>
-   <script>
-      var mymap = L.map('map1').setView([43.370917, -80.983042], 13);
+						<div class="form-label-group col-12 col-md-7 col-lg-6">
+							<input type="password" id="inputPassword" class="form-control" placeholder="Password"
+								required>
+						</div>
 
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-         maxZoom: 18,
-         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-            '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-         id: 'mapbox.streets'
-      }).addTo(mymap);
+						<div class="form-label-group col-12 col-md-7 col-lg-6">
+							<label class="ml-4 text-red" id="incorrect1" for="incorrect" hidden>*incorrect username or
+								password</label>
+						</div>
 
-      var geojson = new L.GeoJSON.AJAX("StratfordBoundary.geojson");
-      geojson.on('data:loaded', function () {
-         geojson.addTo(mymap);
-      });
-   </script>
+						<br id="incorrect2" hidden>
+
+						<div class="custom-control custom-checkbox mb-3 ml-3">
+							<input type="checkbox" class="custom-control-input" id="customCheck1">
+							<label class="custom-control-label" for="customCheck1">Remember password</label>
+						</div>
+
+						<div class="offset-8 offset-md-9 offset-lg-10">
+							<button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
+							<!--<hr class="my-4">
+						<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
+						<button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign in with Facebook</button>
+						-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="signupModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Sign Up</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="form-signin">
+						<div class="form-label-group col-12 col-md-7 col-lg-6">
+							<input type="text" id="enterName" class="form-control" placeholder="Full Name" required
+								autofocus>
+						</div>
+
+						<div class="form-label-group col-md-7 col-lg-6">
+							<input type="text" id="enterSpecialization" class="form-control"
+								placeholder="Specialization" required autofocus>
+						</div>
+
+						<div class="form-group row">
+							<div class="form-label-group col-12 col-md-3 ml-3">
+								<input type="text" id="enterCountry" class="form-control" placeholder="Country" required
+									autofocus>
+							</div>
+							<div class="form-label-group col-12 col-md-3">
+								<input type="text" id="enterCity" class="form-control" placeholder="City" required
+									autofocus>
+							</div>
+							<div class="form-label-group col-12 col-md-4">
+								<input type="text" id="enterStreet" class="form-control" placeholder="Street" required
+									autofocus>
+							</div>
+						</div>
+
+
+						<div class="form-label-group col-md-7 col-lg-6">
+							<input type="email" id="enterEmail" class="form-control" placeholder="Email address"
+								required autofocus>
+						</div>
+
+						<div class="form-label-group col-md-7 col-lg-6">
+							<input type="password" id="enterPassword" class="form-control" placeholder="Password"
+								required>
+						</div>
+
+						<div class="form-label-group col-md-7 col-lg-6">
+							<input type="password" id="enterConfirmedPassword" class="form-control"
+								placeholder="Password" required>
+						</div>
+
+						<div class="form-label-group center-text py-2">
+							<label for="Confirmation text-muted">*We will contact you as soon as we confirm your
+								information</label>
+						</div>
+
+						<br>
+
+						<div class="offset-8 offset-md-9 offset-lg-10">
+							<button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
+							<!-- <hr class="my-4">
+						<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
+						<button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
+						-->
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="privacypolicymodal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Privacy Policy</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					Last updated: 2/6/2020
+					<br>
+					<br>
+					Our Company operates http://www.MedIT.com. This page informs you of our policies regarding the
+					collection, use and disclosure of Personal Information we receive from users of the Site.
+					We use your Personal Information only for providing and improving the Site. By using the Site, you
+					agree to the collection and use of information in accordance with this policy.
+					<br>
+					<br>
+					<h5>Information Collection And Use</h5>
+					While using our Site, we may ask you to provide us with certain personally identifiable information
+					that can be used to contact or identify you. Personally identifiable information may include, but is
+					not limited to your name ("Personal Information").
+					<br>
+					<br>
+					<h5>Log Data</h5>
+					Like many site operators, we collect information that your browser sends whenever you visit our Site
+					("Log Data").
+					This Log Data may include information such as your computer's Internet Protocol ("IP") address,
+					browser type, browser version, the pages of our Site that you visit, the time and date of your
+					visit, the time spent on those pages and other statistics.
+					In addition, we may use third party services such as Google Analytics that collect, monitor and
+					analyze.
+					<br>
+					<br>
+					<h5>Communications</h5>
+					We may use your Personal Information to contact you with newsletters, marketing or promotional
+					materials and other information.
+					<br>
+					<br>
+					<h5>Cookies</h5>
+					Cookies are files with small amount of data, which may include an anonymous unique identifier.
+					Cookies are sent to your browser from a web site and stored on your computer's hard drive.
+					Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse
+					all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you
+					may not be able to use some portions of our Site.
+					<br>
+					<br>
+					<h5>Security</h5>
+					The security of your Personal Information is important to us, but remember that no method of
+					transmission over the Internet, or method of electronic storage, is 100% secure. While we strive to
+					use commercially acceptable means to protect your Personal Information, we cannot guarantee its
+					absolute security.
+					<br>
+					<br>
+					<h5>Changes To This Privacy Policy</h5>
+					This Privacy Policy is effective as of 2/6/2020 and will remain in effect except with respect to any
+					changes in its provisions in the future, which will be in effect immediately after being posted on
+					this page.
+					We reserve the right to update or change our Privacy Policy at any time and you should check this
+					Privacy Policy periodically. Your continued use of the Service after we post any modifications to
+					the Privacy Policy on this page will constitute your acknowledgment of the modifications and your
+					consent to abide and be bound by the modified Privacy Policy.
+					If we make any material changes to this Privacy Policy, we will notify you either through the email
+					address you have provided us, or by placing a prominent notice on our website.
+					<br>
+					<br>
+					<h5>Contact Us</h5>
+					If you have any questions about this Privacy Policy, please contact us.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="termsofusemodal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Terms of Use</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					Last updated: 2/6/2020
+					<br>
+					<br>
+					Please read these Terms of Use carefully before using the http://www.MedIT.com website operated by
+					Our Company.
+					<br>
+					Your access to and use of the Service is conditioned on your acceptance of and compliance with these
+					Terms. These Terms apply to all visitors, users and others who access or use the Service.
+					By accessing or using the Service you agree to be bound by these Terms. If you disagree with any
+					part of the terms then you may not access the Service.
+					<br>
+					<br>
+					<h5>Purchases</h5>
+					If you wish to purchase any product or service made available through the Service, you may be asked
+					to supply certain information relevant to your Purchase.
+					<br>
+					<br>
+					<h5>Termination</h5>
+					We may terminate or suspend access to our Service immediately, without prior notice or liability,
+					for any reason whatsoever, including without limitation if you breach the Terms.
+					All provisions of the Terms which by their nature should survive termination shall survive
+					termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity
+					and limitations of liability.
+					<br>
+					<br>
+					<h5>Content</h5>
+					Our Service allows you to post, link, store, share and otherwise make available certain information,
+					text, graphics, videos, or other material.
+					<br>
+					<br>
+					<h5>Links To Other Web Sites</h5>
+					Our Service may contain links to third-party web sites or services that are not owned or controlled
+					by Our Company.
+					Our Company has no control over, and assumes no responsibility for, the content, privacy policies,
+					or practices of any third party web sites or services. You further acknowledge and agree that Our
+					Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or
+					alleged to be caused by or in connection with use of or reliance on any such content, goods or
+					services available on or through any such web sites or services.
+					<br>
+					<br>
+					<h5>Changes</h5>
+					We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+					revision is material we will try to provide at least 30 days' notice prior to any new terms taking
+					effect. What constitutes a material change will be determined at our sole discretion.
+					<br>
+					<br>
+					<h5>Contact Us</h5>
+					If you have any questions about these Terms, please contact us.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<header class="masthead">
+		<div class="container">
+			<div class="masthead-subheading">Welcome To Med IT</div>
+			<div class="masthead-heading text-uppercase">Statistics Division</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="row">
+			<div id="map1"></div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" href="#first" role="tab" data-toggle="tab">First</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#second" role="tab" data-toggle="tab">Second</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#third" role="tab" data-toggle="tab">Third</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div role="tabpanel" class="tab-pane fade show active" id="first">
+						<!--   <div class=" col-6" id="piechart"></div> -->
+						<div class="row">
+							<div class="col-12 col-md-6" id="dountchart1"></div>
+							<div class="col-12 col-md-6" id="dountchart2"></div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="second">
+						<!--  <div class="col-md" id="guagechart"></div> -->
+						<div class="row">
+							<div class="col-12 col-md-6" id="dountchart3"></div>
+							<div class="col-12 col-md-6" id="columnchart1"></div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="third">
+						<div id="geochart"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="footer py-4">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-4 text-lg-left">Copyright &copy Med IT 2020</div>
+				<div class="col-lg-4 my-3 my-lg-0">
+					<a class="btn btn-dark btn-social-icon mx-2" href="https://www.facebook.com/fifth.gmfm.9"
+						target="_blank"><i class="fa fa-facebook-f"></i></a>
+					<a class="btn btn-dark btn-social-icon mx-2" href="https://www.linkedin.com/in/fifth-gmfm-73a82b1ab"
+						target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a class="btn btn-dark btn-social-icon mx-2" href="mailto:gmfmgmfm5@gmail.com" target="_blank"><i
+							class="fa fa-google"></i></a>
+				</div>
+				<div class="col-lg-4 text-lg-right"><a type="button" class="mr-3" data-toggle="modal"
+						data-target="#privacypolicymodal" href="">Privacy Policy</a><a type="button" data-toggle="modal"
+						data-target="#termsofusemodal" href="">Terms of Use</a>
+				</div>
+			</div>
+	</footer>
+	<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+	<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		var mymap = L.map('map1').setView([43.370917, -80.983042], 13);
+  
+		L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+		   maxZoom: 18,
+		   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+			  '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			  'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		   id: 'mapbox.streets'
+		}).addTo(mymap);
+  
+		var geojson = new L.GeoJSON.AJAX("StratfordBoundary.geojson");
+		geojson.on('data:loaded', function () {
+		   geojson.addTo(mymap);
+		});
+	 </script>
 </body>
 
 </html>

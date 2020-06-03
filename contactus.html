@@ -40,11 +40,11 @@
 						 
                         <li class="nav-item"><a class="nav-link" href="./statistics.html"><span class="fa fa-bar-chart fa-lg"></span> Statistics</a></li>
                         
-                        <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#"><span class="fa fa-home fa-address-card fa-lg"></span> Contact Us</a></li>
 						
-						<li class="nav-item"><a class="nav-link active" href="#"><span class="fa fa-info fa-lg"></span> About</a></li>
+						<li class="nav-item"><a class="nav-link" href="./about.html"><span class="fa fa-info fa-lg"></span> About</a></li>
 					
-					</ul>
+			</ul>
 
 
             <span class="navbar-text mr-0 btn">
@@ -277,110 +277,86 @@
 	</div>
    
    <header class="masthead">
-      <div class="container">
-         <div class="masthead-subheading">Welcome To Med IT</div>
-         <div class="masthead-heading text-uppercase">Learn About Our Team</div>
-      </div>
+		<div class="container">
+			<div class="masthead-subheading">Welcome To Med IT</div>
+			<div class="masthead-heading text-uppercase">Connect With Us</div>
+		</div>
    </header>
    <div class="container">
-      <div class="row">
-         
-         <div class="col-12 text-center mt-2 py-6">
-            <h3>Who Are We?</h3>
-			<hr class="divider my-4" />
-            <p>We are a group of Information Technology graduates, who studied in Al-Baath University.
-               <br>We believe in hard work and dedication as the best way towards success.
-               <br>The project idea generated from the need for such service and the misuse of internet
-               <br>by patients. Also, for supporting doctors with their work.
-            </p>
+      <div class="row row-content-last">
+         <div class="d-none d-sm-block col-6 col-lg-3 text-center align-self-center">
+            <em><strong>designer</strong></em>
+            <img src="img/designer.gif" id="designer" alt="designer">
          </div>
+         <div class="d-none d-sm-block col-6 col-lg-3 text-center order-lg-9 align-self-center">
+            <em> <strong>programmer</strong> </em>
+            <img src="img/programmer.gif" id="coder" alt="programmer">
+         </div>
+         <div class="col-12 col-lg-6 order-lg-5 py-4">
 		 
-		 <div class="col-12 py-6" id="aboutbg">
-            <img src="img/aboutbg.jpg" alt="team" class="responsive">
-         </div>
-      </div>
-	  <br>
-	  <br>
-	  <br>
-      <div class="row mt-2">
-         <div class="col text-center">
-            <h3>Meet Our Team</h3>
-         </div>
-      </div>
-	  <hr class="divider my-4" />
-      <div class="row row-content-cards">
-         <!-- maher -->
-         <div class="col-6 col-lg-3">
-            <div class="card family text-center align-items-center">
-               <div class="card card-header">
-			   <img src="img/maher.jpg" alt="Card image cap" class="card-img-top rounded-circle ">
+            <form class="form-signin">
+			
+               <div class="form-group row">
+                  <label for="firstname" class="col-md-3 col-form-label">First Name</label>
+                  <div class="col-md-9">
+                     <input type="text" class="form-control form-input-mine" id="firstname" name="firstname" placeholder="First Name">
+                  </div>
                </div>
-			   <div class="card-body">
-                  <h4 class="card-title ">Maher Akkari</h4>
-				  <p class="text-muted">Front-End Developer</p>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.facebook.com/aphrodites.child.9"
-                     target="_blank"><i class="fa fa-facebook-f"></i></a>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.linkedin.com/in/maher-akkari-32a305132/"
-                     target="_blank"><i class="fa fa-linkedin"></i></a>
-                  <a class="btn btn-dark btn-social-icon " href="mailto:maherakkari1@gmail.com" target="_blank"><i
-                        class="fa fa-google"></i></a>
+               <div class="form-group row">
+                  <label for="lastname" class="col-md-3 col-form-label">Last Name</label>
+                  <div class="col-md-9">
+                     <input type="text" class="form-control form-input-mine" id="lastname" name="lastname" placeholder="Last Name">
+                  </div>
                </div>
-            </div>
-         </div>
-         <!-- End maher -->
-         <!-- Ghaith -->
-         <div class="col-6 col-lg-3">
-            <div class="card family text-center align-items-center">
-               <div class="card card-header">
-			   <img src="img/ghaith.jpg" alt="Card image cap" class="card-img-top rounded-circle">
+               <div class="form-group row">
+                  <label for="telnum" class="col-12 col-md-3 col-form-label">Contact Tel.</label>
+                  <div class="col-5 col-md-3">
+                     <input type="tel" class="form-control form-input-mine" id="areacode" name="areacode" placeholder="Area Code">
+                  </div>
+                  <div class="col-5 col-md-6">
+                     <input type="tel" class="form-control form-input-mine" id="telnum" name="telnum" placeholder="Tel. Number">
+                  </div>
                </div>
-			   <div class="card-body">
-                  <h4 class="card-title ">Ghaith Asaad</h4>
-				  <p class="text-muted">Front-End Developer</p>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.facebook.com/ghaith.asaad.97"
-                     target="_blank"><i class="fa fa-facebook-f"></i></a>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.linkedin.com/in/ghaith-asaad-301303132/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                  <a class="btn btn-dark btn-social-icon" href="mailto:ghaithasaad20@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+               <div class="form-group row">
+                  <label for="emailid" class="col-md-3 col-form-label">Email</label>
+                  <div class="col-md-9">
+                     <input type="email" class="form-control form-input-mine" id="emailid" name="email" placeholder="Email">
+                  </div>
                </div>
-            </div>
-         </div>
-         <!-- End Ghaith -->
-         <!-- fadi -->
-         <div class="col-6 col-lg-3">
-            <div class="card family text-center align-items-center">
-               <div class="card card-header">
-			   <img src="img/fadi.jpg" alt="Card image cap" class="card-img-top rounded-circle">
+               <div class="form-group row">
+                  <div class="col-md-5 offset-md-3">
+                     <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="approve" name="approve" value="">
+                        <label class="form-check-label" for="approve"><strong>May we contact you?</strong></label>
+                     </div>
+                  </div>
+                  <div class="col-md-3 offset-md-1">
+                     <select disabled class="form-cotrol form-input-mine" id="contactselect">
+                        <option>Tel</option>
+                        <option>Email</option>
+                     </select>
+                  </div>
                </div>
-			   <div class="card-body">
-                  <h4 class="card-title">Fadi Atallah</h4>
-				  <p class="text-muted">Back-End Developer</p>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.facebook.com/fadi.atallah.98"
-                     target="_blank"><i class="fa fa-facebook-f"></i></a>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.linkedin.com/in/fadi-atallah-340685132" target="_blank"><i class="fa fa-linkedin"></i></a>
-                  <a class="btn btn-dark btn-social-icon" href="mailto:fadiatallah1997@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
+               <div class="form-group row">
+                  <label for="feedback" class="col-md-3 col-form-label">Your Feedback</label>
+                  <div class="col-md-9">
+                     <textarea class="form-control form-input-mine" id="feedback" name="feedback" rows="12"></textarea>
+                  </div>
                </div>
-            </div>
-         </div>
-         <!-- End fadi -->
-         <!-- marcel -->
-         <div class="col-6  col-lg-3">
-            <div class="card family text-center align-items-center">
-               <div class="card card-header">
-			   <img src="img/marcel.jpg" alt="Card image cap" class="card-img-top rounded-circle">
+			   <br>
+               <div class="form-group row">
+                  <div class="offset-md-3 col-md-9">
+                     <button type="submit" class="btn btn-primary my-btn">Send Feedback</button>
+                  </div>
                </div>
-			   <div class="card-body">
-                  <h4 class="card-title ">Marcel Ibrahim</h4>
-				  <p class="text-muted">Back-End Developer</p>
-                  <a class="btn btn-dark btn-social-icon" href="https://www.facebook.com/marsel.ibrahem.18"
-                     target="_blank"><i class="fa fa-facebook-f"></i></a>
-                  <a class="btn btn-dark btn-social-icon " href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                  <a class="btn btn-dark btn-social-icon " href="mailto:marcel.ibrahim.39@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
-               </div>
-            </div>
-         </div>
-         <!-- End marcel -->
+            
+			</form>
+         
+		 </div>
+ 
       </div>
    </div>
+
    <footer class="footer py-4">
       <div class="container">
          <div class="row align-items-center">
@@ -390,8 +366,9 @@
 				<a class="btn btn-dark btn-social-icon mx-2" href="https://www.linkedin.com/in/fifth-gmfm-73a82b1ab" target="_blank"><i class="fa fa-linkedin"></i></a> 
 				<a class="btn btn-dark btn-social-icon mx-2" href="mailto:gmfmgmfm5@gmail.com" target="_blank"><i class="fa fa-google"></i></a>
             </div>
-            <div class="col-lg-4 text-lg-right"><a type="button" class="mr-3" data-toggle="modal" data-target="#privacypolicymodal" href="">Privacy Policy</a><a type="button" data-toggle="modal" data-target="#termsofusemodal" href="">Terms of Use</a>
-            </div>
+            <div class="col-lg-4 text-lg-right">
+				<a type="button" class="mr-3" data-toggle="modal" data-target="#privacypolicymodal" href="">Privacy Policy</a><a type="button" data-toggle="modal" data-target="#termsofusemodal" href="">Terms of Use</a>
+			</div>
          </div>
       </div>
    </footer>
@@ -399,6 +376,33 @@
    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
    <script src="js/scripts.js"></script>
+   
+   <script>
+		
+	$(document).ready(function(){
+		
+		$("#approve").click(function () {
+			
+		$("#approve").parent().on("click","#approve", function () {
+				
+					$("#contactselect").prop("disabled", false);
+					$("#approve").attr("id", "disapprove");
+					
+				})
+				
+				.on("click","#disapprove",function () {
+					
+					$("#contactselect").prop("disabled", true);
+					$("#disapprove").attr("id", "approve");
+					
+				});
+			
+		});
+		
+		
+		
+	});
+   </script>
 </body>
 
 </html>
