@@ -250,7 +250,9 @@
 	color: rgba(35,255,95,0.8);
 	font-size:100%;
 }
-
+.ml-sp{
+  margin-left: 1rem;/* always before media */
+}
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 1.5rem;
@@ -259,10 +261,10 @@
     background-color: transparent;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
     margin-left: -50px;
+    
   }
   #mainNav .navbar-text:last-child{
     margin-right: -62px !important;
-    float: right;
   }
    #mainNav .navbar-brand {
     font-size: 1.5em;
@@ -289,7 +291,9 @@
   #mainNav .navbar-nav .nav-item {
     margin-right: 1rem;
   }
-
+  .ml-sp{
+    margin-left: 90px;
+  }
 }
 
 header.masthead {
@@ -336,6 +340,7 @@ header.masthead .masthead-heading {
     line-height: 4.5rem;
     margin-bottom: 4rem;
   }
+
 }
 
 .py-6 {
@@ -399,9 +404,8 @@ header.masthead .masthead-heading {
 .py-02{
 	padding-top: 0 !important;
 }
-.ml-sp{
-  margin-left: 80px;
-}
+
+
 .btn-social {
   height: 2.5rem;
   width: 2.5rem;
@@ -510,7 +514,7 @@ width: 150px;
 
 .my-btn-2{
 	font-size: 80% !important;
-	border-radius: 1rem !important;
+	border-radius: 10rem !important;/* was 1 */
 	letter-spacing: .1rem !important;
     font-weight: 600 !important;
     padding: 0.4rem !important;
