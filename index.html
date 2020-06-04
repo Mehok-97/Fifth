@@ -50,27 +50,29 @@
 
 				</ul>
 
+				<div class="text-right-sp  d-flex">
+					<span class="navbar-text btn">
+						<form class="form-signin">
+							<a type="button" class="btn my-btn-2 btn-success" data-toggle="modal"
+								data-target="#signinModal">
+								<span class="fa fa-sign-in"></span> Sign In
+							</a>
+						</form>
+					</span>
 
-				<span class="navbar-text  btn">
-					<form class="form-signin">
-						<a type="button" class="btn my-btn-2 btn-success" data-toggle="modal"
-							data-target="#signinModal">
-							<span class="fa fa-sign-in"></span> Sign In
-						</a>
-					</form>
-				</span>
-
-				<span class="navbar-text  btn">
-					<form class="form-signin">
-						<a type="button" class="btn my-btn-2 signup-btn-color" data-toggle="modal"
-							data-target="#signupModal">
-							<span class="fa fa-user-plus"></span> Sign Up
-						</a>
-					</form>
-				</span>
-
-
+					<span class="navbar-text btn">
+						<form class="form-signin">
+							<a type="button" class="btn my-btn-2 signup-btn-color" data-toggle="modal"
+								data-target="#signupModal">
+								<span class="fa fa-user-plus"></span> Sign Up
+							</a>
+						</form>
+					</span>
+				</div>
 			</div>
+
+
+		</div>
 		</div>
 	</nav>
 
@@ -329,6 +331,84 @@
 			</div>
 		</div>
 	</div>
+	<!-- terms for sign up -->
+	<!-- <div id="termsmodal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Terms of Use</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					Last updated: 2/6/2020
+					<br>
+					<br>
+					Please read these Terms of Use carefully before using the http://www.MedIT.com website operated by
+					Our Company.
+					<br>
+					Your access to and use of the Service is conditioned on your acceptance of and compliance with these
+					Terms. These Terms apply to all visitors, users and others who access or use the Service.
+					By accessing or using the Service you agree to be bound by these Terms. If you disagree with any
+					part of the terms then you may not access the Service.
+
+					<div id="rest-text">
+						<br>
+						<br>
+						<h5>Purchases</h5>
+						If you wish to purchase any product or service made available through the Service, you may be
+						asked
+						to supply certain information relevant to your Purchase.
+						<br>
+						<br>
+						<h5>Termination</h5>
+						We may terminate or suspend access to our Service immediately, without prior notice or
+						liability,
+						for any reason whatsoever, including without limitation if you breach the Terms.
+						All provisions of the Terms which by their nature should survive termination shall survive
+						termination, including, without limitation, ownership provisions, warranty disclaimers,
+						indemnity
+						and limitations of liability.
+						<br>
+						<br>
+						<h5>Content</h5>
+						Our Service allows you to post, link, store, share and otherwise make available certain
+						information,
+						text, graphics, videos, or other material.
+						<br>
+						<br>
+						<h5>Links To Other Web Sites</h5>
+						Our Service may contain links to third-party web sites or services that are not owned or
+						controlled
+						by Our Company.
+						Our Company has no control over, and assumes no responsibility for, the content, privacy
+						policies,
+						or practices of any third party web sites or services. You further acknowledge and agree that
+						Our
+						Company shall not be responsible or liable, directly or indirectly, for any damage or loss
+						caused or
+						alleged to be caused by or in connection with use of or reliance on any such content, goods or
+						services available on or through any such web sites or services.
+						<br>
+						<br>
+						<h5>Changes</h5>
+						We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+						revision is material we will try to provide at least 30 days' notice prior to any new terms
+						taking
+						effect. What constitutes a material change will be determined at our sole discretion.
+						<br>
+						<br>
+						<h5>Contact Us</h5>
+						If you have any questions about these Terms, please contact us.
+					</div>
+					<button class="btn btn-md btn-primary text-uppercase down" id="t-btn" type="button"
+						data-toggle="collapse" data-target="#rest-text"><span class=" fa fa-arrow-circle-down" id="t-font"></span></button>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<!-- end terms for sign up -->
 
 	<header class="masthead">
 		<div class="container">
@@ -490,6 +570,14 @@
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
+<!-- 	<script>
+		$("#t-btn").click(function () {
+			$('#rest-text').toggle();
+			$('#t-font').toggle('1000');
+			$(this).find($(".fa")).toggleClass("fa-arrow-circle-up").toggleClass( "fa-arrow-circle-down");
+
+		});
+	</script> -->
 </body>
 
 </html>

@@ -78,7 +78,7 @@
 @media (min-width: 992px) {
 	
 .carousel-item {
-	height: 600px;
+	height:600px;
 }
 
 .carousel-item img {
@@ -292,10 +292,9 @@
     margin-right: 1rem;
   }
   .ml-sp{
-    margin-left: 90px;
+    margin-left: 7rem;
   }
 }
-
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
@@ -551,3 +550,10 @@ width: 150px;
 	width: 550px;
 }
 /*end geojson*/
+@media (max-width: 992px) {
+  .text-right-sp{
+    text-align: right;
+    float: right;
+  }
+
+}
