@@ -13,8 +13,10 @@
    $(window).scroll(navbarCollapse);
    
    })(jQuery);
+                       /* modals */
 
-   $("#agree").click(function () {
+
+/*    $("#agree").click(function () {
 
     $("#agree").parent().on("click", "#agree", function () {
 
@@ -48,8 +50,10 @@ $.fn.sort_select_box = function () {
     //replace with sorted my_options;
     $(this).empty().append(my_options);
 };
-$('#enterSpecialization').sort_select_box();
+$('#enterSpecialization').sort_select_box(); */
 
+
+                  /* end modals */
 
 /* piechart 
 google.charts.load('current', { 'packages': ['corechart'] });

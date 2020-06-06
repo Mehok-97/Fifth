@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="Guiding website for patients, and a supporting website for doctors. Provides patients with a suggested doctor based on their symptoms, and provides doctors with statistics to support and simplify their work." />
+    <meta name="author" content="GMFM" />
+    <link rel="shortcut icon" href="./img/Graduation-Project-Logo.ico" />
+    <title> Med IT</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+</head>
+
+<body id="page-top">
+    <div id="termsofusemodal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3 class="card-title">Terms of Use</h3>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;
+					</button>
+				</div>
+				<div class="modal-body">
+					Last updated: 2/6/2020
+					<br>
+					<br>
+					Please read these Terms of Use carefully before using the http://www.MedIT.com website operated by
+					Our Company.
+					<br>
+					Your access to and use of the Service is conditioned on your acceptance of and compliance with these
+					Terms. These Terms apply to all visitors, users and others who access or use the Service.
+					By accessing or using the Service you agree to be bound by these Terms. If you disagree with any
+					part of the terms then you may not access the Service.
+					<br>
+					<br>
+					<h5>Purchases</h5>
+					If you wish to purchase any product or service made available through the Service, you may be asked
+					to supply certain information relevant to your Purchase.
+					<br>
+					<br>
+					<h5>Termination</h5>
+					We may terminate or suspend access to our Service immediately, without prior notice or liability,
+					for any reason whatsoever, including without limitation if you breach the Terms.
+					All provisions of the Terms which by their nature should survive termination shall survive
+					termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity
+					and limitations of liability.
+					<br>
+					<br>
+					<h5>Content</h5>
+					Our Service allows you to post, link, store, share and otherwise make available certain information,
+					text, graphics, videos, or other material.
+					<br>
+					<br>
+					<h5>Links To Other Web Sites</h5>
+					Our Service may contain links to third-party web sites or services that are not owned or controlled
+					by Our Company.
+					Our Company has no control over, and assumes no responsibility for, the content, privacy policies,
+					or practices of any third party web sites or services. You further acknowledge and agree that Our
+					Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or
+					alleged to be caused by or in connection with use of or reliance on any such content, goods or
+					services available on or through any such web sites or services.
+					<br>
+					<br>
+					<h5>Changes</h5>
+					We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+					revision is material we will try to provide at least 30 days' notice prior to any new terms taking
+					effect. What constitutes a material change will be determined at our sole discretion.
+					<br>
+					<br>
+					<h5>Contact Us</h5>
+					If you have any questions about these Terms, please contact us.
+					<br>
+					<br>
+					<div class="col text-right">
+						<a type="button" class="btn my-btn-4 close" data-dismiss="modal">ok</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="content modalbg text-center">
+
+        <form class="form-modal-signup form-signin" id="signupform">
+            <div class="md-3">&nbsp;</div>
+            <div class="form-label-group">
+                <h3 class="col-10 d-inline-block">Sign Up</h3>
+                <a type="button" class="col-1 d-inline-block" href="index.html">
+                    <span class="fa fa-close"></span>
+                </a>
+            </div>
+            <div class="form-group row">
+                <div class="form-label-group col-6 col-md-8">
+                    <input type="text" id="enterName" class="form-control" placeholder="Full Name" required autofocus>
+                </div>
+                <div class="form-label-group col-6 col-md-4 ">
+                    <input type="text" id="enterMedicalNumber" class="form-control" placeholder="MedicalNumber" required
+                        autofocus>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="form-label-group  col-4">
+                    <input type="text" id="enterCountry" class="form-control" placeholder="Country" required autofocus>
+                </div>
+                <div class="form-label-group col-4">
+                    <input type="text" id="enterCity" class="form-control" placeholder="City" required autofocus>
+                </div>
+                <div class="form-label-group col-4">
+                    <input type="text" id="enterStreet" class="form-control" placeholder="Street" required autofocus>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="form-label-group col-7">
+                    <input type="email" id="enterEmail" class="form-control" placeholder="Email address" required
+                        autofocus>
+                </div>
+
+                <div class="form-label-group col-5">
+                    <select id="enterSpecialization" name='field{$i}type' class="form-control" required>
+                        <option value="" selected hidden>specialization</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Gastroenterology">Gastroenterology</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="ENT">ENT</option>
+                        <option value="ER">ER</option>
+                        <option value="HIV specialist">HIV specialist</option>
+                        <option value="Pulmonology">Pulmonology</option>
+                        <option value="Endocrinology">Endocrinology</option>
+                        <option value="Internal">Internal</option>
+                        <option value="Generic">Generic</option>
+                        <option value="Surgery">Surgery</option>
+                        <option value="Podiatrist">Podiatrist</option>
+                        <option value="General Practition">General Practition</option>
+                        <option value="Rheumatolog">Rheumatology</option>
+                        <option value="Immunology">Immunology</option>
+                        <option value="Psychiatrisology">Psychiatrisology</option>
+                        <option value="Nephrology">Nephrology</option>
+                        <option value="OB/GYN">OB/GYN</option>
+                        <option value="Ophthalmology">Ophthalmology</option>
+                        <option value="Oncology">Oncology</option>
+                        <option value="Urology">Urology</option>
+                        <option value="Otolaryngology">Otolaryngology</option>
+                        <option value="Anesthesiology">Anesthesiology</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Radiology">Radiology</option>
+                        <option value="Cardiolog">Cardiology</option>
+                        <option value="Orthopedistation">Orthopedistation</option>
+                        <option value="non-above">other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="form-label-group col-6">
+                    <input type="password" id="enterPassword" class="form-control" placeholder=" Enter Password"
+                        required>
+                </div>
+
+                <div class="form-label-group col-6">
+                    <input type="password" id="enterConfirmedPassword" class="form-control"
+                        placeholder="Confirm Password" required>
+                </div>
+            </div>
+            <div class="col-8 offset-2">
+                <button type="button" class="btn btn-block btn-primary text-uppercase" id="signterms">Terms
+                    Of
+                    Use</button>
+            </div>
+            <div class="form-check col ml-3 py-4 text-left">
+                <br>
+                <input type="checkbox" class="form-check-input" id="agree">
+                <label class=" form-check-label" for="agree"><strong>I have read the Terms of use and
+                        accepted it.</strong></label>
+            </div>
+
+            <div class="form-label-group center-text py-4">
+
+                <label for="Confirmation text-muted"><em>*We will contact you as soon as we confirm your
+                        information</em></label>
+            </div>
+
+
+
+            <div class="form-label-group offset-8">
+                <button disabled class="btn btn-md btn-primary text-uppercase" id="sign-btn" type="submit">Sign
+                    Up</button>
+            </div>
+        </form>
+
+
+    </div>
+    <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        $("#agree").click(function () {
+
+            $("#agree").parent().on("click", "#agree", function () {
+
+                $("#sign-btn").prop("disabled", false);
+                $("#agree").attr("id", "disagree");
+
+            })
+
+                .on("click", "#disagree", function () {
+
+                    $("#sign-btn").prop("disabled", true);
+                    $("#disagree").attr("id", "agree");
+
+                });
+
+        });
+        $("#signterms").click(function () {
+            $('#termsofusemodal').modal("show");
+        });
+
+
+        $.fn.sort_select_box = function () {
+            // Get options from select box
+            var my_options = $("#" + this.attr('id') + ' option');
+            // sort alphabetically
+            my_options.sort(function (a, b) {
+                if (a.text > b.text) return 1;
+                else if (a.text < b.text) return -1;
+                else return 0
+            })
+            //replace with sorted my_options;
+            $(this).empty().append(my_options);
+        };
+        $('#enterSpecialization').sort_select_box();
+    </script>
+</body>
+
+</html
