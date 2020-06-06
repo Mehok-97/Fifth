@@ -14,6 +14,41 @@
    
    })(jQuery);
 
+   $("#agree").click(function () {
+
+    $("#agree").parent().on("click", "#agree", function () {
+
+        $("#sign-btn").prop("disabled", false);
+        $("#agree").attr("id", "disagree");
+
+    })
+
+        .on("click", "#disagree", function () {
+
+            $("#sign-btn").prop("disabled", true);
+            $("#disagree").attr("id", "agree");
+
+        });
+
+});
+$("#signterms").click(function () {
+    $('#termsofusemodal').modal("show");
+});
+
+
+$.fn.sort_select_box = function () {
+    // Get options from select box
+    var my_options = $("#" + this.attr('id') + ' option');
+    // sort alphabetically
+    my_options.sort(function (a, b) {
+        if (a.text > b.text) return 1;
+        else if (a.text < b.text) return -1;
+        else return 0
+    })
+    //replace with sorted my_options;
+    $(this).empty().append(my_options);
+};
+$('#enterSpecialization').sort_select_box();
 
 
 /* piechart 
@@ -291,3 +326,5 @@ function drawRegionsMap() {
         var chart = new google.visualization.GeoChart(document.getElementById('geochart-colors'));
         chart.draw(data, options);
       }; */
+     
+
