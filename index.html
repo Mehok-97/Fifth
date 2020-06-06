@@ -26,10 +26,10 @@
 			</a>
 
 			<a class="navbar-brand mr-auto" href="#page-top">Med IT</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"><span
-					class="navbar-toggler-icon"></span></button>
+			<button class="navbar-toggler float-right" type="button" data-toggle="collapse"
+				data-target="#navbarResponsive"><span class="navbar-toggler-icon"></span></button>
 
-			<div class="collapse navbar-collapse" id="navbarResponsive">
+			<div class="collapse navbar-collapse navbar-left" id="navbarResponsive">
 
 				<ul class="navbar-nav ml-sp mr-auto">
 
@@ -51,6 +51,44 @@
 				</ul>
 
 				<div class="text-right-sp  d-flex">
+					
+					<ul class="proflie-dropdown btn-group navbar-nav hide-navigation-item">
+						<li class="nav-item d-inline">
+							<a class="btn btn-success" role="button" id="proflie_dropdown" data-toggle="dropdown"
+								aria-haspopup="true" aria-expanded="false">
+								<span class="fa fa-user"></span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right" aria-labelledby="proflie_dropdown">
+								<div class="col-12">
+									<div class="card card-body ml-0 m-0">
+										<img class="img-thumbnail rounded-circle" src="./img/oneman.png" alt="username">
+										<p>Wellcome back! Dr.anyname</p>
+										<div class="row"><strong><span
+													class="fa fa-user"></span>&nbsp;Username:</strong><em
+												class="text-muted ml-2">hisname</em></div>
+										<div class="row"><strong><span
+													class="fa fa-address-card"></span>&nbsp;Address:</strong><em
+												class="text-muted ml-2">hisname</em></div>
+										<div class="row"><strong><span
+													class="fa fa-star"></span>&nbsp;Specialization:</strong><em class="
+													text-muted ml-2">hisname</em></div>
+										<div class="row"><strong><span class="fa fa-lock"></span>&nbsp;Medical
+												Number:</strong><em class="text-muted ml-2">hisname</em></div>
+										<div class="row"><strong><span class="fa fa-address-book"></span>&nbsp;Phone
+												Number:</strong><em class="text-muted ml-2">hisname</em></div>
+										<div class="row"><strong><span
+													class="fa fa-envelope"></span>&nbsp;Email:</strong><em
+												class="text-muted ml-2">hisname</em></div>
+										<br>
+										<a class="btn btn-danger align-self-center" href="#">Log out</a>
+									</div>
+
+								</div>
+
+							</div>
+
+						</li>
+					</ul>
 					<span class="navbar-text btn">
 						<form class="form-signin">
 							<a type="button" class="btn my-btn-2 btn-success" data-toggle="modal"
@@ -68,16 +106,16 @@
 							</a>
 						</form>
 					</span>
+
 				</div>
+
 			</div>
 
-
-		</div>
 		</div>
 	</nav>
 
 	<div id="signinModal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
+		<div class="modal-dialog " role="content">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h3 class="card-title">Sign In</h3>
@@ -87,17 +125,17 @@
 				</div>
 				<div class="modal-body">
 					<form class="form-signin">
-						<div class="form-label-group col-12 col-md-7 col-lg-6">
+						<div class="form-label-group col-12">
 							<input type="email" id="inputEmail" class="form-control" placeholder="Email address"
 								required autofocus>
 						</div>
 
-						<div class="form-label-group col-12 col-md-7 col-lg-6">
+						<div class="form-label-group col-12">
 							<input type="password" id="inputPassword" class="form-control" placeholder="Password"
 								required>
 						</div>
 
-						<div class="form-label-group col-12 col-md-7 col-lg-6">
+						<div class="form-label-group col-12">
 							<label class="ml-4 text-red" id="incorrect1" for="incorrect" hidden>*incorrect username or
 								password</label>
 						</div>
@@ -109,7 +147,7 @@
 							<label class="custom-control-label" for="customCheck1">Remember password</label>
 						</div>
 
-						<div class="offset-8 offset-md-9 offset-lg-10">
+						<div class=" form-label-group offset-8 offset-sm-9">
 							<button class="btn btn-md btn-primary text-uppercase" type="submit">Sign in</button>
 							<!--<hr class="my-4">
 						<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign in with Google</button>
@@ -124,7 +162,7 @@
 
 
 	<div id="signupModal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
+		<div class="modal-dialog " role="content">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h3 class="card-title">Sign Up</h3>
@@ -133,57 +171,108 @@
 					</button>
 				</div>
 				<div class="modal-body">
-					<form class="form-signin">
-						<div class="form-label-group col-12 col-md-7 col-lg-6">
-							<input type="text" id="enterName" class="form-control" placeholder="Full Name" required
-								autofocus>
-						</div>
-
-						<div class="form-label-group col-md-7 col-lg-6">
-							<input type="text" id="enterSpecialization" class="form-control"
-								placeholder="Specialization" required autofocus>
+					<form class="form-signin" id="signupform">
+						<div class="form-group row">
+							<div class="form-label-group col-6 col-md-8">
+								<input type="text" id="enterName" class="form-control" placeholder="Full Name" required
+									autofocus>
+							</div>
+							<div class="form-label-group col-6 col-md-4 ">
+								<input type="text" id="enterMedicalNumber" class="form-control"
+									placeholder="MedicalNumber" required autofocus>
+							</div>
 						</div>
 
 						<div class="form-group row">
-							<div class="form-label-group col-12 col-md-3 ml-3">
+							<div class="form-label-group  col-4">
 								<input type="text" id="enterCountry" class="form-control" placeholder="Country" required
 									autofocus>
 							</div>
-							<div class="form-label-group col-12 col-md-3">
+							<div class="form-label-group col-4">
 								<input type="text" id="enterCity" class="form-control" placeholder="City" required
 									autofocus>
 							</div>
-							<div class="form-label-group col-12 col-md-4">
+							<div class="form-label-group col-4">
 								<input type="text" id="enterStreet" class="form-control" placeholder="Street" required
 									autofocus>
 							</div>
 						</div>
 
+						<div class="form-group row">
+							<div class="form-label-group col-7">
+								<input type="email" id="enterEmail" class="form-control" placeholder="Email address"
+									required autofocus>
+							</div>
 
-						<div class="form-label-group col-md-7 col-lg-6">
-							<input type="email" id="enterEmail" class="form-control" placeholder="Email address"
-								required autofocus>
+							<div class="form-label-group col-5">
+								<select id="enterSpecialization" name='field{$i}type' class="form-control" required>
+									<option value="" selected hidden>specialization</option>
+									<option value="Neurology">Neurology</option>
+									<option value="Gastroenterology">Gastroenterology</option>
+									<option value="Pediatrics">Pediatrics</option>
+									<option value="ENT">ENT</option>
+									<option value="ER">ER</option>
+									<option value="HIV specialist">HIV specialist</option>
+									<option value="Pulmonology">Pulmonology</option>
+									<option value="Endocrinology">Endocrinology</option>
+									<option value="Internal">Internal</option>
+									<option value="Generic">Generic</option>
+									<option value="Surgery">Surgery</option>
+									<option value="Podiatrist">Podiatrist</option>
+									<option value="General Practition">General Practition</option>
+									<option value="Rheumatolog">Rheumatology</option>
+									<option value="Immunology">Immunology</option>
+									<option value="Psychiatrisology">Psychiatrisology</option>
+									<option value="Nephrology">Nephrology</option>
+									<option value="OB/GYN">OB/GYN</option>
+									<option value="Ophthalmology">Ophthalmology</option>
+									<option value="Oncology">Oncology</option>
+									<option value="Urology">Urology</option>
+									<option value="Otolaryngology">Otolaryngology</option>
+									<option value="Anesthesiology">Anesthesiology</option>
+									<option value="Dermatology">Dermatology</option>
+									<option value="Radiology">Radiology</option>
+									<option value="Cardiolog">Cardiology</option>
+									<option value="Orthopedistation">Orthopedistation</option>
+									<option value="non-above">other</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group row">
+							<div class="form-label-group col-6">
+								<input type="password" id="enterPassword" class="form-control"
+									placeholder=" Enter Password" required>
+							</div>
+
+							<div class="form-label-group col-6">
+								<input type="password" id="enterConfirmedPassword" class="form-control"
+									placeholder="Confirm Password" required>
+							</div>
+						</div>
+						<div class="col-8 offset-2">
+							<button type="button" class="btn btn-block btn-primary text-uppercase" id="signterms">Terms
+								Of
+								Use</button>
+						</div>
+						<div class="form-check col ml-3 py-4">
+							<br>
+							<input type="checkbox" class="form-check-input" id="agree">
+							<label class=" form-check-label" for="agree"><strong>I have read the Terms of use and
+									accepted it.</strong></label>
 						</div>
 
-						<div class="form-label-group col-md-7 col-lg-6">
-							<input type="password" id="enterPassword" class="form-control" placeholder="Password"
-								required>
+						<div class="form-label-group center-text py-4">
+
+							<label for="Confirmation text-muted"><em>*We will contact you as soon as we confirm your
+									information</em></label>
 						</div>
 
-						<div class="form-label-group col-md-7 col-lg-6">
-							<input type="password" id="enterConfirmedPassword" class="form-control"
-								placeholder="Password" required>
-						</div>
 
-						<div class="form-label-group center-text py-2">
-							<label for="Confirmation text-muted">*We will contact you as soon as we confirm your
-								information</label>
-						</div>
 
-						<br>
-
-						<div class="offset-8 offset-md-9 offset-lg-10">
-							<button class="btn btn-md btn-primary text-uppercase" type="submit">Sign Up</button>
+						<div class="offset-8 offset-sm-9">
+							<button disabled class="btn btn-md btn-primary text-uppercase" id="sign-btn"
+								type="submit">Sign
+								Up</button>
 							<!-- <hr class="my-4">
 						<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fa fa-google fa-lg mr-2"></i> Sign Up with Google</button>
 						<button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fa fa-facebook-f fa-lg mr-2"></i> Sign Up with Facebook</button>
@@ -264,6 +353,11 @@
 					<br>
 					<h5>Contact Us</h5>
 					If you have any questions about this Privacy Policy, please contact us.
+					<br>
+					<br>
+					<div class="col text-right">
+						<a type="button" class="btn my-btn-4 close" data-dismiss="modal">ok</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -327,88 +421,15 @@
 					<br>
 					<h5>Contact Us</h5>
 					If you have any questions about these Terms, please contact us.
+					<br>
+					<br>
+					<div class="col text-right">
+						<a type="button" class="btn my-btn-4 close" data-dismiss="modal">ok</a>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- terms for sign up -->
-	<!-- <div id="termsmodal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-lg" role="content">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h3 class="card-title">Terms of Use</h3>
-					<button type="button" class="close" data-dismiss="modal">
-						&times;
-					</button>
-				</div>
-				<div class="modal-body">
-					Last updated: 2/6/2020
-					<br>
-					<br>
-					Please read these Terms of Use carefully before using the http://www.MedIT.com website operated by
-					Our Company.
-					<br>
-					Your access to and use of the Service is conditioned on your acceptance of and compliance with these
-					Terms. These Terms apply to all visitors, users and others who access or use the Service.
-					By accessing or using the Service you agree to be bound by these Terms. If you disagree with any
-					part of the terms then you may not access the Service.
-
-					<div id="rest-text">
-						<br>
-						<br>
-						<h5>Purchases</h5>
-						If you wish to purchase any product or service made available through the Service, you may be
-						asked
-						to supply certain information relevant to your Purchase.
-						<br>
-						<br>
-						<h5>Termination</h5>
-						We may terminate or suspend access to our Service immediately, without prior notice or
-						liability,
-						for any reason whatsoever, including without limitation if you breach the Terms.
-						All provisions of the Terms which by their nature should survive termination shall survive
-						termination, including, without limitation, ownership provisions, warranty disclaimers,
-						indemnity
-						and limitations of liability.
-						<br>
-						<br>
-						<h5>Content</h5>
-						Our Service allows you to post, link, store, share and otherwise make available certain
-						information,
-						text, graphics, videos, or other material.
-						<br>
-						<br>
-						<h5>Links To Other Web Sites</h5>
-						Our Service may contain links to third-party web sites or services that are not owned or
-						controlled
-						by Our Company.
-						Our Company has no control over, and assumes no responsibility for, the content, privacy
-						policies,
-						or practices of any third party web sites or services. You further acknowledge and agree that
-						Our
-						Company shall not be responsible or liable, directly or indirectly, for any damage or loss
-						caused or
-						alleged to be caused by or in connection with use of or reliance on any such content, goods or
-						services available on or through any such web sites or services.
-						<br>
-						<br>
-						<h5>Changes</h5>
-						We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
-						revision is material we will try to provide at least 30 days' notice prior to any new terms
-						taking
-						effect. What constitutes a material change will be determined at our sole discretion.
-						<br>
-						<br>
-						<h5>Contact Us</h5>
-						If you have any questions about these Terms, please contact us.
-					</div>
-					<button class="btn btn-md btn-primary text-uppercase down" id="t-btn" type="button"
-						data-toggle="collapse" data-target="#rest-text"><span class=" fa fa-arrow-circle-down" id="t-font"></span></button>
-				</div>
-			</div>
-		</div>
-	</div> -->
-	<!-- end terms for sign up -->
 
 	<header class="masthead">
 		<div class="container">
@@ -570,14 +591,44 @@
 	<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="js/scripts.js"></script>
-<!-- 	<script>
-		$("#t-btn").click(function () {
-			$('#rest-text').toggle();
-			$('#t-font').toggle('1000');
-			$(this).find($(".fa")).toggleClass("fa-arrow-circle-up").toggleClass( "fa-arrow-circle-down");
+	<script>
+		$("#agree").click(function () {
+
+			$("#agree").parent().on("click", "#agree", function () {
+
+				$("#sign-btn").prop("disabled", false);
+				$("#agree").attr("id", "disagree");
+
+			})
+
+				.on("click", "#disagree", function () {
+
+					$("#sign-btn").prop("disabled", true);
+					$("#disagree").attr("id", "agree");
+
+				});
 
 		});
-	</script> -->
+		$("#signterms").click(function () {
+			$('#termsofusemodal').modal("show");
+		});
+
+
+		$.fn.sort_select_box = function () {
+			// Get options from select box
+			var my_options = $("#" + this.attr('id') + ' option');
+			// sort alphabetically
+			my_options.sort(function (a, b) {
+				if (a.text > b.text) return 1;
+				else if (a.text < b.text) return -1;
+				else return 0
+			})
+			//replace with sorted my_options;
+			$(this).empty().append(my_options);
+		};
+		$('#enterSpecialization').sort_select_box();
+
+	</script>
 </body>
 
 </html>

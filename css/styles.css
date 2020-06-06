@@ -557,3 +557,43 @@ width: 150px;
   }
 
 }
+.my-btn-4{
+  background-color:#135fb1 !important;
+  color: white !important;
+  opacity: 1!important;
+	font-size: 110% !important;
+	border-radius: 10rem !important;
+	letter-spacing: .2rem !important;
+    font-weight: bold !important;
+    padding:1.2rem 1rem !important;
+}
+
+#signterms{
+  padding:1rem 1.5rem !important;
+}
+#signupModal{
+  overflow-y: auto;
+}
+.dropdown-menu{
+ min-width:300px !important;
+}
+.dropdown-menu img{
+  width:5rem !important;
+  padding-left: 0px !important;
+}
+.dropdown-menu .card{
+  padding: 0px auto auto 0px !important;
+
+}#proflie_dropdown{
+  border-radius: 10rem !important;
+}
+@media (max-width: 992px) {
+  .dropdown-menu{
+    height: 300px;
+    overflow: scroll;
+   }
+
+}
+.hide-navigation-item{
+  display: none !important;
+}
